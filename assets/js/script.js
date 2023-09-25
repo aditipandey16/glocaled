@@ -75,7 +75,35 @@ document.addEventListener("click", function (event) {
   }
 });
 
+document.getElementById('toggle-UK').addEventListener('click', function (e) {
+  e.preventDefault();
+  toggleDropdown('dropdown-UK');
+});
 
+function toggleDropdown(id) {
+  const dropdown = document.getElementById(id);
+  const dropdownContent = dropdown.querySelector('.custom-dropdown-content');
+  dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+}
+
+function selectCourse(country, course) {
+  // Handle the selected course for the given country
+  console.log(`User selected course "${course}" for ${country}`);
+
+  // Close the dropdown
+  const dropdownContent = document.querySelector(`#${country} .custom-dropdown-content`);
+  dropdownContent.style.display = 'none';
+}
+
+// Close the dropdowns when clicking outside of them
+window.onclick = function (event) {
+  if (!event.target.matches('.custom-dropdown')) {
+    const dropdownContents = document.querySelectorAll('.custom-dropdown-content');
+    for (const dropdownContent of dropdownContents) {
+      dropdownContent.style.display = 'none';
+    }
+  }
+};
 
 
 
