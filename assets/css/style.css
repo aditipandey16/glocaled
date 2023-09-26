@@ -9,7 +9,7 @@
   --orange-peel: hsl(36, 100%, 55%);
   --tart-orange: hsl(0, 100%, 63%);
   --light-gray: hsl(133, 78%, 14%);
-  --cultured-1: hsl(141, 50%, 69%);
+  --cultured-1: hsl(0, 0%, 100%);
   --cultured-2: hsl(170, 55%, 73%);
   --coral_10: hsla(14, 95%, 66%, 0.1);
   --white_10: hsla(0, 0%, 100%, 0.1);
@@ -1275,7 +1275,7 @@ body {
 
   .hero .abs-img-1 {
     width: 250px;
-    right: -145px;
+    right: -181px;
     top: -60px;
   }
 
@@ -1387,7 +1387,9 @@ body {
   .navbar-top,
   .overlay { display: none; }
 
-  .header { padding-block: 40px; }
+  .header { padding-block: 40px;
+     background-color:hsl(228, 100%, 87%);
+  }
 
   .header.active { padding-block: 15px; }
 
@@ -1422,8 +1424,9 @@ body {
    */
 
   .hero .abs-img-1 {
-    width: max-content;
+    width: 356px;
     z-index: 3;
+    border-radius: 350px;
    }
 
   .hero .abs-img-2 { 
