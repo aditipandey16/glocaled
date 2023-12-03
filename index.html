@@ -59,7 +59,7 @@
           </li>
 
           <li class="navbar-item">
-            <a href="#countr" class="navbar-link" data-nav-toggler>Countries</a>
+            <a href="#countries" class="navbar-link" data-nav-toggler>Countries</a>
           </li>
 
         </ul>
@@ -178,16 +178,11 @@
                 <div class="card-icon">
                   <img src="uk.png" alt="UK Flag">
                 </div>
-                <div>
-                  <h3 class="h3 card-title">
-                    <a href="#" id="toggle-UK">UK</a>
-                  </h3>
-                  <span class="card-meta">39 Course</span>
-                </div>
-                <div id="dropdown-UK" class="custom-dropdown">
-                  <div class="custom-dropdown-content">
-                    <div class="custom-dropdown-option" onclick="selectCourse('UK', 'Bachelor\'s')">Bachelor's</div>
-                    <div class="custom-dropdown-option" onclick="selectCourse('UK', 'Master\'s')">Master's</div>
+                <div class="dropdown">
+                  <button onclick="myUKFunction()" class="dropbtn">UK</button>
+                  <div id="myUKDropdown" class="dropdown-content">
+                    <a href="#">Bachelors</a>
+                    <a href="#">Masters</a>
                   </div>
                 </div>
               </div>
@@ -200,10 +195,12 @@
                   <img src="australia.png" alt="Australia Flag">
                 </div>
           
-                <div>
-                  <h3 class="h3 card-title">
-                    <a href="#">Australia</a>
-                  </h3>
+                <div class="dropdown">
+                  <button onclick="myAusFunction()" class="dropbtn">Australia</button>
+                  <div id="myAusDropdown" class="dropdown-content">
+                    <a href="#">Bachelors</a>
+                    <a href="#">Masters</a>
+                  </div>
                 </div>
           
               </div>
@@ -216,12 +213,13 @@
                   <img src="USA.png" alt="Australia Flag">
                 </div>
           
-                <div>
-                  <h3 class="h3 card-title">
-                    <a href="#">USA</a>
-                  </h3>
+                <div class="dropdown">
+                  <button onclick="myUSFunction()" class="dropbtn">USA</button>
+                  <div id="myUSDropdown" class="dropdown-content">
+                    <a href="#">Bachelors</a>
+                    <a href="#">Masters</a>
+                  </div>
                 </div>
-          
               </div>
             </li>
 
@@ -232,10 +230,12 @@
                   <img src="NewZealand.png" alt="Australia Flag">
                 </div>
           
-                <div>
-                  <h3 class="h3 card-title">
-                    <a href="#">New Zealand</a>
-                  </h3>
+                <div class="dropdown">
+                  <button onclick="myNZFunction()" class="dropbtn">New Zealand</button>
+                  <div id="myNZDropdown" class="dropdown-content">
+                    <a href="#">Bachelors</a>
+                    <a href="#">Masters</a>
+                  </div>
                 </div>
           
               </div>
@@ -248,10 +248,12 @@
                   <img src="Canada.png" alt="Australia Flag">
                 </div>
           
-                <div>
-                  <h3 class="h3 card-title">
-                    <a href="#">Canada</a>
-                  </h3>
+                <div class="dropdown">
+                  <button onclick="myCanFunction()" class="dropbtn">Canada</button>
+                  <div id="myCanDropdown" class="dropdown-content">
+                    <a href="#">Bachelors</a>
+                    <a href="#">Masters</a>
+                  </div>
                 </div>
           
               </div>
@@ -264,10 +266,12 @@
                   <img src="Europe.png" alt="Australia Flag">
                 </div>
           
-                <div>
-                  <h3 class="h3 card-title">
-                    <a href="#">Europe</a>
-                  </h3>
+                <div class="dropdown">
+                  <button onclick="myEurFunction()" class="dropbtn">Europe</button>
+                  <div id="myEurDropdown" class="dropdown-content">
+                    <a href="#">Bachelors</a>
+                    <a href="#">Masters</a>
+                  </div>
                 </div>
           
               </div>
@@ -280,10 +284,12 @@
                   <img src="Singapore.png" alt="Australia Flag">
                 </div>
           
-                <div>
-                  <h3 class="h3 card-title">
-                    <a href="#">Singapore</a>
-                  </h3>
+                <div class="dropdown">
+                  <button onclick="mySingFunction()" class="dropbtn">Singapore</button>
+                  <div id="mySingDropdown" class="dropdown-content">
+                    <a href="#">Bachelors</a>
+                    <a href="#">Masters</a>
+                  </div>
                 </div>
           
               </div>
@@ -1302,6 +1308,127 @@
   <!-- 
     - ionicon link
   -->
+  <script>
+    function myUKFunction() {
+  document.getElementById("myUKDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+function myAusFunction() {
+  document.getElementById("myAusDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+function myUSFunction() {
+  document.getElementById("myUSDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+function myNZFunction() {
+  document.getElementById("myNZDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+function myCanFunction() {
+  document.getElementById("myCanDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+function myEurFunction() {
+  document.getElementById("myEurDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+function mySingFunction() {
+  document.getElementById("mySingDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
