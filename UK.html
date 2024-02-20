@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University List</title>
+    <link rel="shortcut icon" href="assets/images/icon.png">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #bfc6f6;
+            color: #060233;
+        }
+
+        .university-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.3s;
+        }
+
+        li:hover {
+            background-color: #f9f9f9;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .university-container {
+                padding: 15px;
+            }
+
+            input[type="text"] {
+                margin-bottom: 15px;
+            }
+
+            li {
+                padding: 12px;
+            }
+        }
+    </style>
+
+    <!-- Include the Poppins font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+</head>
+<body>
+
+    <div class="university-container">
+        <h2 style="font-size: 24px; margin-bottom: 20px;">Universities we represent in UK</h2>
+        <input type="text" id="searchInput" placeholder="Search..." oninput="filterUniversities()">
+        
+        <ul id="universityList">
+            <li>Harvard University</li>
+            <li>Massachusetts Institute of Technology (MIT)</li>
+            <li>Stanford University</li>
+            <li>University of Cambridge</li>
+            <li>University of Oxford</li>
+            <!-- Add more universities as needed -->
+        </ul>
+    </div>
+
+    <script>
+        function filterUniversities() {
+            var input, filter, ul, li, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("universityList");
+            li = ul.getElementsByTagName("li");
+
+            for (i = 0; i < li.length; i++) {
+                txtValue = li[i].textContent || li[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
