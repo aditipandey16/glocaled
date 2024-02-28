@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>University List</title>
-    <link rel="shortcut icon" href="assets/images/icon.png">
+    <link rel="shortcut icon" type="png" href="assets/images/icon.png">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #bfc6f6;
-            color: #060233;
+            background-color: #98b6ee;
+            color: #333;
         }
 
-        .university-container {
+        .table-container {
             max-width: 800px;
             margin: 50px auto;
             background-color: #fff;
@@ -23,6 +24,8 @@
             padding: 20px;
             font-size: 16px;
             line-height: 1.6;
+            overflow-x: auto;
+            /* Enable horizontal scrolling on small screens */
         }
 
         input[type="text"] {
@@ -35,32 +38,27 @@
             font-size: 14px;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
+        table {
+            width: 100%;
+            border-collapse: collapse;
         }
 
-        li {
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-            transition: background-color 0.3s;
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
         }
 
-        li:hover {
-            background-color: #f9f9f9;
+        th {
+            background-color: #f2f2f2;
         }
 
         @media only screen and (max-width: 600px) {
-            .university-container {
-                padding: 15px;
-            }
 
-            input[type="text"] {
-                margin-bottom: 15px;
-            }
-
-            li {
-                padding: 12px;
+            th,
+            td {
+                padding: 8px;
             }
         }
     </style>
@@ -68,40 +66,590 @@
     <!-- Include the Poppins font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
 </head>
+
 <body>
 
-    <div class="university-container">
+    <div class="table-container">
         <h2 style="font-size: 24px; margin-bottom: 20px;">Universities we represent in UK</h2>
-        <input type="text" id="searchInput" placeholder="Search..." oninput="filterUniversities()">
-        
-        <ul id="universityList">
-            <li>Harvard University</li>
-            <li>Massachusetts Institute of Technology (MIT)</li>
-            <li>Stanford University</li>
-            <li>University of Cambridge</li>
-            <li>University of Oxford</li>
-            <!-- Add more universities as needed -->
-        </ul>
+        <input type="text" id="searchInput" placeholder="Search..." oninput="filterTable()">
+
+        <table id="universityTable">
+            <thead>
+                <tr>
+                    <th>University Name</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>University of Bristol, Bristol, England </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Leeds, Leeds, England </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Glasgow, Glasgow, Scotland
+                    </td>
+                    <td>Scotland</td>
+                </tr>
+                <tr>
+                    <td>Durham University, Durham, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Southampton, Southampton, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Birmingham, Birmingham, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Nottingham, Nottingham, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Sheffield, Sheffield, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Newcastle University, Newcastle upon Tyne, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Lancaster University, Lancaster, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Queen Mary University of London, London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Bath, Bath, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>The University of Exeter, Exeter, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of York, York, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Southampton, Southampton, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Liverpool, Liverpool, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Cranfield University, Cranfield, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Queen`s University Belfast, Belfast, Northern Ireland
+                    </td>
+                    <td>Northern Ireland</td>
+                </tr>
+                <tr>
+                    <td>University of Aberdeen, Aberdeen, Scotland
+                    </td>
+                    <td>Scotland</td>
+                </tr>
+                <tr>
+                    <td>Loughborough University, Loughborough & London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Heriot Watt University, Edinburgh, Scotland
+                    </td>
+                    <td>Scotland</td>
+                </tr>
+                <tr>
+                    <td>University of Surrey, Guildford, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Leicester, Leicester, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Strathclyde, Glasgow, Scotland
+                    </td>
+                    <td>Scotland</td>
+                </tr>
+                <tr>
+                    <td>University of East Anglia, Norwich, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Swansea University, Swansea, Wales
+                    </td>
+                    <td>Wales</td>
+                </tr>
+                <tr>
+                    <td>Brunel University London, London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Royal Holloway, University of London, Egham, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Oxford Brookes University, Oxford, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Stirling, Stirling, Scotland
+                    </td>
+                    <td>Scotland</td>
+                </tr>
+                <tr>
+                    <td>University of Dundee, Dundee, Scotland
+                    </td>
+                    <td>Scotland</td>
+                </tr>
+                <tr>
+                    <td>Aston University, Birmingham, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Essex, Colchester, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Bangor University, Bangor, Wales
+                    </td>
+                    <td>Wales</td>
+                </tr>
+                <tr>
+                    <td>(INTO) City University London (Except PG Courses of Business), London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Portsmouth, Portsmouth, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Northumbria University, Newcastle upon Tyne & London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Plymouth, Plymouth, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>The University of Huddersfield, Huddersfield, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Coventry University, Coventry & London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Manchester Metropolitan University, Manchester, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Goldsmiths, University of London, London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Nottingham Trent University, Nottingham, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Kingston University, Kingston, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Bradford, Bradford, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Middlesex University, London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Greenwich, London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Westminster, London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Bournemouth University, Poole, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of West of England, Bristol, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Brighton, Brighton, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Keele University, Keele, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>De Montfort University (Except Gujarat), Leicester, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Edinburgh Napier University, Edinburgh, Scotland
+                    </td>
+                    <td>Scotland</td>
+                </tr>
+                <tr>
+                    <td>London South Bank University, London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Hertfordshire, Hatfield, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of East London, London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Salford, Manchester, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Central Lancashire, Preston, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Robert Gordon University, Aberdeen, Scotland
+                    </td>
+                    <td>Scotland</td>
+                </tr>
+                <tr>
+                    <td>Birmingham City University, Birmingham, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Sheffield Hallam University, Sheffield
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>The University of Northampton, Northampton, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Leeds Beckett University, Leeds, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Canterbury Christ Church University, Canterbury, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Wolverhampton, Wolverhampton, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>St George's University of London, London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University for the Creative Arts, Farnham, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Staffordshire University, Stoke-on-Trent, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of West London, London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of South Wales (Except Punjab & Haryana), Cardiff, Wales
+                    </td>
+                    <td>Wales</td>
+                </tr>
+                <tr>
+                    <td>Teesside University (Except Namakkal & Punjab), Middlesbrough and London Campus
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Cardiff Metropolitan University, Cardiff, Wales
+                    </td>
+                    <td>Wales</td>
+                </tr>
+                <tr>
+                    <td>Solent University, Southampton, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Anglia Ruskin University, Cambridge & Chelmsford, England (Except Punjab and Harayana)
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Chester, Chester, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Bolton, Bolton, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Liverpool Hope University, Liverpool, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Gloucestershire, Gloucester, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>The University of Buckingham, Buckingham, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Sunderland, Sunderland & London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>York St John University, York and London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Roehampton, London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of the West of Scotland, Paisley, Scotland
+                    </td>
+                    <td>Scotland</td>
+                </tr>
+                <tr>
+                    <td>University of Bedfordshire, Luton, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University College Birmingham, Birmingham, England (Except Punjab and Haryana)
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Regent’s University London, London, England 
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Hult International Business School, London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University of Law, Guildford, England
+                    </td>
+                    <td>England</td>
+                </tr><tr>
+                    <td>Norwich University of Arts, Norwich, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Bishop Grosseteste University, Lincoln, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Cambridge School of Visual & Performing Arts (CSVPA), Cambridge, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>University Academy 92, Manchester, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>BPP University (Except Andhra Pradesh, Gujarat, Haryana, Punjab, Uttar Pradesh, Uttarakhand & Telangana), London, England
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Le - Cordon Bleu, London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Istituto Marangoni, London, England 
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>Bloomsbury Institute, London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>The Engineering & Design Institute of London (TEDI-London), England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>The Engineering & Design Institute of London (TEDI-London), England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>(Study Group) Bellerbys College, Brighton, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>(Study Group) University of Sussex, Falmer, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>(Study Group) Liverpool John Moores University, Liverpool, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>(On Campus) Birkbeck, University of London (UG & PG Transfer Programs), London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>(On Campus) The Courtauld University of Art (UG & PG Transfer Programs), London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>(On Campus) Royal Veterinary College, University of London (UG Transfer Programs), London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>(On Campus) University of Reading (UG & PG Transfer Programs), Reading, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>(On Campus) University of Hull (UG & PG Transfer Programs), Hull, England
+                    </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>QAHE- Ulster University, Birmingham & London, England
+                    </td>
+                    <td>England</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <script>
-        function filterUniversities() {
-            var input, filter, ul, li, i, txtValue;
+        function filterTable() {
+            var input, filter, table, tr, td, i, txtValue;
             input = document.getElementById("searchInput");
             filter = input.value.toUpperCase();
-            ul = document.getElementById("universityList");
-            li = ul.getElementsByTagName("li");
+            table = document.getElementById("universityTable");
+            tr = table.getElementsByTagName("tr");
 
-            for (i = 0; i < li.length; i++) {
-                txtValue = li[i].textContent || li[i].innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = "";
+            for (i = 1; i < tr.length; i++) { // Start from index 1 to skip the header row
+                td = tr[i].getElementsByTagName("td");
+                var found = false;
+
+                for (var j = 0; j < td.length; j++) {
+                    txtValue = td[j].textContent || td[j].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (found) {
+                    tr[i].style.display = "";
                 } else {
-                    li[i].style.display = "none";
+                    tr[i].style.display = "none";
                 }
             }
         }
     </script>
 
 </body>
+
 </html>

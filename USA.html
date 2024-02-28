@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University List</title>
+    <link rel="shortcut icon" type="png" href="assets/images/icon.png">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #98b6ee;
+            color: #333;
+        }
+
+        .table-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: auto;
+            /* Enable horizontal scrolling on small screens */
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            th,
+            td {
+                padding: 8px;
+            }
+        }
+    </style>
+
+    <!-- Include the Poppins font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+</head>
+
+<body>
+
+    <div class="table-container">
+        <h2 style="font-size: 24px; margin-bottom: 20px;">Universities we represent in USA</h2>
+        <input type="text" id="searchInput" placeholder="Search..." oninput="filterTable()">
+
+        <table id="universityTable">
+            <thead>
+                <tr>
+                    <th>University Name</th>
+                    <th>State</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>University of Connecticut, Connecticut (Public Ivy - Only UG)
+                    </td>
+                    <td>Connecticut</td>
+                </tr>
+                <tr>
+                    <td>Johns Hopkins University, Baltimore, Maryland (School of Engineering – Only PG)
+                    </td>
+                    <td>Maryland</td>
+                </tr>
+                <tr>
+                    <td>Arizona State University, Phoenix, Arizona
+
+                    </td>
+                    <td>Arizona</td>
+                </tr>
+                <tr>
+                    <td>University of Massachusetts Amherst (Masters Programs & ECE MS 1+1 Program)
+
+                    </td>
+                    <td>Massachusetts</td>
+                </tr>
+                <tr>
+                    <td>George Washington University, Washington D.C. (MS in Finance & Applied Finance)
+                    </td>
+                    <td>Washington DC</td>
+                </tr>
+                <tr>
+                    <td>University of California, Riverside, California (Graduate Business Programs & College of Engineering and UCR Extension)
+
+                    </td>
+                    <td>California</td>
+                </tr>
+
+                <tr>
+                    <td>Virginia Tech Language and Culture Institute, Blacksburg, Virginia (Only UG Pathways)
+
+                    </td>
+                    <td>Virginia</td>
+                </tr>
+                <tr>
+                    <td>University of South Florida, Tampa, Florida (Only UG)
+
+                    </td>
+                    <td>Florida</td>
+                </tr>
+                <tr>
+                    <td>University of Arizona, Tucson, Arizona
+
+                    </td>
+                    <td>Arizona</td>
+                </tr>
+                <tr>
+                    <td>Drexel University, Philadelphia, Pennsylvania (UG Gateways, College of Engg-MS only and IEP)
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>University of Delaware, Newark, Delaware (Only UG)
+
+                    </td>
+                    <td>Delaware</td>
+                </tr>
+                <tr>
+                    <td>University of Wisconsin-Madison, Wisconsin (Credit and non-credit based VISP or VISP-affiliated DCS programs) 
+
+                    </td>
+                    <td>Wisconsin</td>
+                </tr>
+                <tr>
+                    <td>George Mason University, Fairfax County, Virginia
+
+                    </td>
+                    <td>Virginia</td>
+                </tr>
+                <tr>
+                    <td>Colorado State University, Fort Collins, Colorado 
+
+                    </td>
+                    <td>Colorado</td>
+                </tr>
+                <tr>
+                    <td>Oregon State University, Corvallis, Oregon
+
+                    </td>
+                    <td>Oregon</td>
+                </tr>
+                <tr>
+                    <td>University of Connecticut, Connecticut (Public Ivy - Only UG)
+                    </td>
+                    <td>Connecticut</td>
+                </tr>
+                <tr>
+                    <td>University of Illinois at Chicago, Illinois
+
+                    </td>
+                    <td>Illinois</td>
+                </tr>
+                <tr>
+                    <td>The University of Alabama Tuscaloosa, Alabama
+
+                    </td>
+                    <td>Alabama</td>
+                </tr>
+                <tr>
+                    <td>Claremont Graduate University, Claremont, California
+
+                    </td>
+                    <td>California</td>
+                </tr>
+                <tr>
+                    <td>Auburn University, Alabama
+                    </td>
+                    <td>Alabama</td>
+                </tr>
+                <tr>
+                    <td>University of Utah, Salt Lake City, Utah (Only UG)
+
+                    </td>
+                    <td>Utah</td>
+                </tr>
+                <tr>
+                    <td>University of Cincinnati, Ohio 
+
+                    </td>
+                    <td>Ohio</td>
+                </tr>
+                <tr>
+                    <td>Ohio University, Athens, Ohio (Only UG)
+
+                    </td>
+                    <td>Ohio</td>
+                </tr>
+                <tr>
+                    <td>University of South Carolina, Columbia, South Carolina
+                    </td>
+                    <td>South California</td>
+                </tr>
+                <tr>
+                    <td>University of the Pacific, Stockton, California
+
+                    </td>
+                    <td>California</td>
+                </tr>
+                <tr>
+                    <td>University of Kansas, Lawrence, Kansas (Only UG)
+
+                    </td>
+                    <td>Kansas</td>
+                </tr>
+                <tr>
+                    <td>Baylor University, Waco, Texas (Pathway and Direct entry)
+
+                    </td>
+                    <td>Texas</td>
+                </tr>
+                <tr>
+                    <td>University of Maryland, Baltimore County, Maryland
+
+                    </td>
+                    <td>Maryland</td>
+                </tr>
+                <tr>
+                    <td>University of Albany, The State University of New York, Albany (SUNY Albany)
+                    </td>
+                    <td>New York</td>
+                </tr>
+                <tr>
+                    <td>University of Dayton, Dayton, Ohio
+
+                    </td>
+                    <td>Ohio</td>
+                </tr>
+                <tr>
+                    <td>University of Colorado Denver, Colorado
+
+                    </td>
+                    <td>Colorado</td>
+                </tr>
+                <tr>
+                    <td>University of Colorado, Colorado Springs, Colorado 
+                    </td>
+                    <td>Colorado</td>
+                </tr>
+                <tr>
+                    <td>State University of New York at Geneseo (SUNY Geneseo)
+                    </td>
+                    <td>New York</td>
+                </tr>
+                <tr>
+                    <td>SUNY Polytechnic Institute, Utica, New York
+
+                    </td>
+                    <td>New York</td>
+                </tr>
+                <tr>
+                    <td>The State University of New York at New Paltz (SUNY New Paltz)
+
+                    </td>
+                    <td>New York</td>
+                </tr>
+                <tr>
+                    <td>State University of New York at Fredonia (UG, PG Pathway and Direct Entry)
+
+                    </td>
+                    <td>New York</td>
+                </tr>
+                <tr>
+                    <td>State University of New York at Plattsburgh (SUNY Plattsburgh)
+
+                    </td>
+                    <td>New York</td>
+                </tr>
+                <tr>
+                    <td>State University of New York College at Old Westbury, New York
+
+                    </td>
+                    <td>New York</td>
+                </tr>
+                <tr>
+                    <td>State University of New York Oswego (SUNY Oswego)
+
+                    </td>
+                    <td>New York</td>
+                </tr>
+                <tr>
+                    <td>Queens College of the City University of New York (Only UG Pathway and Direct)
+
+                    </td>
+                    <td>New York</td>
+                </tr>
+                <tr>
+                    <td>Culinary Institute of America ( New York, California, and Texas Campus) Only UG
+
+                    </td>
+                    <td>New York</td>
+                </tr>
+                <tr>
+                    <td>American University Washington D.C.
+
+                    </td>
+                    <td>Washington DC</td>
+                </tr>
+                <tr>
+                    <td>Louisiana State University, Baton Rouge, Louisiana (Only UG)
+
+                    </td>
+                    <td>Louisiana</td>
+                </tr>
+                <tr>
+                    <td>Washington State University – Pullman, Tri Cities, Everett, Vancouver, and Spokane Campus
+
+                    </td>
+                    <td>Virginia</td>
+                </tr>
+                <tr>
+                    <td>University of Alabama at Birmingham
+
+                    </td>
+                    <td>Alabama</td>
+                </tr>
+                <tr>
+                    <td>Virginia Commonwealth University, Richmond, Virginia
+
+                    </td>
+                    <td>Virginia</td>
+                </tr>
+                <tr>
+                    <td>Saint Louis University, St. Louis, Missouri
+
+                    </td>
+                    <td>Missouri</td>
+                </tr>
+                <tr>
+                    <td>Missouri University of Science and Technology, Rolla, Missouri
+
+                    </td>
+                    <td>Missouri</td>
+                </tr>
+                <tr>
+                    <td>University of Massachusetts Lowell, Massachusetts 
+
+                    </td>
+                    <td>Massachusetts</td>
+                </tr>
+                <tr>
+                    <td>Massachusetts College of Pharmacy and Health Sciences, Boston, Massachusetts (MCPHS University)
+
+                    </td>
+                    <td>Massachusetts</td>
+                </tr>
+                <tr>
+                    <td>University of Massachusetts, Boston, Massachusetts (UG, PG Pathway and Direct Entry)
+
+                    </td>
+                    <td>Massachusetts</td>
+                </tr>
+                <tr>
+                    <td>University of Massachusetts, Dartmouth, Massachusetts
+
+                    </td>
+                    <td>Massachusetts</td>
+                </tr>
+                <tr>
+                    <td>Suffolk University, Boston, Massachusetts
+
+                    </td>
+                    <td>Massachusetts</td>
+                </tr>
+                <tr>
+                    <td>University of New Hampshire, Durham, New Hampshire
+
+                    </td>
+                    <td>New Hampshire</td>
+                </tr>
+                <tr>
+                    <td>Adelphi University, New York- Garden City and Manhattan Campus
+
+                    </td>
+                    <td>New York</td>
+                </tr>
+                <tr>
+                    <td>University of Idaho, Moscow, Idaho
+
+                    </td>
+                    <td>Idaho</td>
+                </tr>
+                <tr>
+                    <td>San Jose State University, San Jose, California
+
+                    </td>
+                    <td>California</td>
+                </tr>
+                <tr>
+                    <td>San Francisco State University, San Francisco, California
+
+                    </td>
+                    <td>California</td>
+                </tr>
+                <tr>
+                    <td>California State University, Los Angeles 
+
+                    </td>
+                    <td>California</td>
+                </tr>
+                <tr>
+                    <td>California State University, Northridge
+
+                    </td>
+                    <td>California</td>
+                </tr>
+                <tr>
+                    <td>California State University, Fresno
+
+                    </td>
+                    <td>California</td>
+                </tr>
+                <tr>
+                    <td>California State University, East Bay
+
+                    </td>
+                    <td>California</td>
+                </tr>
+                <tr>
+                    <td>California State University, Channel Islands
+
+                    </td>
+                    <td>California</td>
+                </tr>
+                <tr>
+                    <td>California State University, Sacramento
+
+                    </td>
+                    <td>California</td>
+                </tr>
+                <tr>
+                    <td>California State University, Bakersfield
+
+                    </td>
+                    <td>California</td>
+                </tr>
+                <tr>
+                    <td>California State University, Dominguez Hills
+
+                    </td>
+                    <td>California</td>
+                </tr>
+                <tr>
+                    <td>California State University, Stanislaus
+
+                    </td>
+                    <td>California</td>
+                </tr>
+                <tr>
+                    <td>California State University, San Bernardino
+
+                    </td>
+                    <td>California</td>
+                </tr>
+                <tr>
+                    <td>Sonoma State University, Rohnert Park, California
+
+                    </td>
+                    <td>California</td>
+                </tr>
+                <tr>
+                    <td>California State Polytechnic University, Pomona (College of the Extended University)
+
+                    </td>
+                    <td>California</td>
+                </tr>
+                <tr>
+                    <td>University of California, Irvine, California; Division of Continuing Education)
+
+                    </td>
+                    <td>California</td>
+                </tr>
+                <tr>
+                    <td>University of California, Berkley Extension, California
+
+                    </td>
+                    <td>California</td>
+                </tr>
+                <tr>
+                    <td>Seattle University, Seattle, Washington
+
+                    </td>
+                    <td>Washington</td>
+                </tr>
+                <tr>
+                    <td>New Jersey Institute of Technology, Newark, New Jersey
+
+                    </td>
+                    <td>New Jersey</td>
+                </tr>
+                <tr>
+                    <td>Rochester Institute of Technology, Rochester, New York
+
+                    </td>
+                    <td>New York</td>
+                </tr>
+                <tr>
+                    <td>Fairleigh Dickinson University, Teaneck, New Jersey
+
+                    </td>
+                    <td>New Jersey</td>
+                </tr>
+                <tr>
+                    <td>Portland State University, Portland, Oregon (Only UG)
+
+                    </td>
+                    <td>Oregon</td>
+                </tr>
+                <tr>
+                    <td>Florida Institute of Technology, Melbourne, Florida
+
+                    </td>
+                    <td>Florida</td>
+                </tr>
+                <tr>
+                    <td>Pace University, New York City
+
+                    </td>
+                    <td>New York</td>
+                </tr>
+                <tr>
+                    <td>Drew University, Madison, New Jersey
+
+                    </td>
+                    <td>New Jersey</td>
+                </tr>
+                <tr>
+                    <td>Savannah College of Art and Design, Savannah, Georgia
+
+                    </td>
+                    <td>Georgia</td>
+                </tr>
+                <tr>
+                    <td>DePaul University, Chicago, Illinois (Direct Entry and UG/PG Pathway)
+
+                    </td>
+                    <td>Illinois</td>
+                </tr>
+                <tr>
+                    <td>University of Hartford, West Hartford, Connecticut (Direct Entry and UG/PG Pathway)
+
+                    </td>
+                    <td>Connecticut</td>
+                </tr>
+                <tr>
+                    <td>Sacred Heart University, Fairfield, Connecticut
+
+                    </td>
+                    <td>Connecticut</td>
+                </tr>
+                <tr>
+                    <td>Florida International University, Miami, Florida (All UG Programs) (PG Programs - Chapman Graduate School of Business and College of Engineering)
+
+                    </td>
+                    <td>Florida</td>
+                </tr>
+                <tr>
+                    <td>Kent State University, Kent, Ohio
+
+                    </td>
+                    <td>Ohio</td>
+                </tr>
+                <tr>
+                    <td>The University of Toledo, Toledo, Ohio (Only UG)
+
+                    </td>
+                    <td>Ohio</td>
+                </tr>
+                <tr>
+                    <td>Nebraska Wesleyan University Lincoln (Only UG)
+
+                    </td>
+                    <td>Nebraska</td>
+                </tr>
+                <tr>
+                    <td>Embry Riddle Aeronautical University (Daytona Beach, Florida & Prescott, Arizona)
+
+                    </td>
+                    <td>Florida</td>
+                </tr>
+                <tr>
+                    <td>Mississippi State University, Oktibbeha County, Mississippi
+
+                    </td>
+                    <td>Mississippi</td>
+                </tr>
+                <tr>
+                    <td>University of New Mexico, Albuquerque
+
+                    </td>
+                    <td>New Mexico</td>
+                </tr>
+                <tr>
+                    <td>Illinois State University, Normal, Illinois
+
+                    </td>
+                    <td>Illinois</td>
+                </tr>
+                <tr>
+                    <td>The Catholic University of America, Washington D.C. 
+
+                    </td>
+                    <td>Washington DC</td>
+                </tr>
+                <tr>
+                    <td>Oklahama State University,  Stillwater, Oklahoma (Only UG)
+
+                    </td>
+                    <td>Oklahoma</td>
+                </tr>
+                <tr>
+                    <td>Rowan University, Glassboro, New Jersey
+
+                    </td>
+                    <td>New Jersey</td>
+                </tr>
+                <tr>
+                    <td>University of Wisconsin Milwaukee, Wisconsin
+
+                    </td>
+                    <td>Wisconsin</td>
+                </tr>
+                <tr>
+                    <td>Marquette University, Milwaukee, Wisconsin 
+
+                    </td>
+                    <td>Wisconsin</td>
+                </tr>
+                <tr>
+                    <td>University of Nevada, Reno
+
+                    </td>
+                    <td>Nevada</td>
+                </tr>
+                <tr>
+                    <td>Ball State University, Muncie, Indiana
+
+                    </td>
+                    <td>Indiana</td>
+                </tr>
+                <tr>
+                    <td>Cleveland State University, Cleveland, Ohio
+
+                    </td>
+                    <td>Ohio</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Wright State University, Dayton, Ohio
+
+
+                    </td>
+                    <td>Ohio</td>
+                </tr>
+                <tr>
+                    <td>Wichita State University, Wichita, Kansas
+
+                    </td>
+                    <td>Kansas</td>
+                </tr>
+                <tr>
+                    <td>Northern Arizona University, Flagstaff, Arizona
+
+
+                    </td>
+                    <td>Arizona</td>
+                </tr>
+                <tr>
+                    <td>University of North Texas, Denton, Texas
+
+
+                    </td>
+                    <td>Texas</td>
+                </tr>
+                <tr>
+                    <td>University of North Texas at Frisco, Texas
+
+
+                    </td>
+                    <td>Texas</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Middle Tennessee State University, Murfreesboro, Tennessee
+
+
+                    </td>
+                    <td>Murfreesboro</td>
+                </tr>
+                <tr>
+                    <td>University of Nebraska at Omaha, Omaha, Nebraska
+
+
+                    </td>
+                    <td>Nebraska</td>
+                </tr>
+                <tr>
+                    <td>The University of Memphis, Memphis, Tennessee
+
+
+                    </td>
+                    <td>Tennessee</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Tennessee Tech University, Cookeville, Tennessee
+
+
+                    </td>
+                    <td>Tennessee</td>
+                </tr>
+                <tr>
+                    <td>Texas State University, San Marcos, Texas
+
+
+                    </td>
+                    <td>Texas</td>
+                </tr>
+                <tr>
+                    <td>University of North Florida, Jacksonville, Florida
+
+
+                    </td>
+                    <td>Florida</td>
+                </tr>
+                <tr>
+                    <td>Florida Atlantic University, Boca Raton, Florida
+
+
+                    </td>
+                    <td>Florida</td>
+                </tr>
+                <tr>
+                    <td>Nova Southeastern University, Davie, Florida
+
+
+                    </td>
+                    <td>Florida</td>
+                </tr>
+                <tr>
+                    <td>University of South Alabama, Mobile, Alabama
+
+
+                    </td>
+                    <td>Alabama</td>
+                </tr>
+                <tr>
+                    <td>Montana State University, Bozeman, Montana
+
+
+                    </td>
+                    <td>Montana</td>
+                </tr>
+                <tr>
+                    <td>The University of Scranton, Scranton, Pennsylvania
+
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Milwaukee School of Engineering, Milwaukee, Wisconsin
+
+
+                    </td>
+                    <td>Wisconsin</td>
+                </tr>
+                <tr>
+                    <td>Auburn University at Montgomery, Alabama
+
+
+                    </td>
+                    <td>Alabama</td>
+                </tr>
+                <tr>
+                    <td>Hofstra University, Long Island, New York (UG, PG Pathway and Direct Entry)
+
+
+                    </td>
+                    <td>New York</td>
+                </tr>
+                <tr>
+                    <td>Kennesaw State University, Kennesaw, Georgia
+
+
+                    </td>
+                    <td>Georgia</td>
+                </tr>
+                <tr>
+                    <td>Purdue University Northwest, Indiana
+
+
+                    </td>
+                    <td>Indiana</td>
+                </tr>
+                <tr>
+                    <td>Long Island University, Post, New York
+
+
+                    </td>
+                    <td>New York</td>
+                </tr>
+                <tr>
+                    <td>Long Island University, Brooklyn, New York
+
+
+                    </td>
+                    <td>New York</td>
+                </tr>
+                <tr>
+                    <td>Texas A & M University, Corpus Christi, Texas
+
+
+                    </td>
+                    <td>Texas</td>
+                </tr>
+                <tr>
+                    <td>Western Kentucky University, Bowling Green, Kentucky
+
+
+                    </td>
+                    <td>Kentucky</td>
+                </tr>
+                <tr>
+                    <td>Southeast Missouri State University, Cape Girardeau, Missouri
+
+
+                    </td>
+                    <td>Missouri</td>
+                </tr>
+                <tr>
+                    <td>Youngstown State University, Youngstown, Ohio
+
+
+                    </td>
+                    <td>Ohio</td>
+                </tr>
+                <tr>
+                    <td>California Baptist University, Riverside, California
+
+                    </td>
+                    <td>California</td>
+                </tr>
+                <tr>
+                    <td>Arkansas State University, Jonesboro, Arkansas
+
+
+                    </td>
+                    <td>Arkansas</td>
+                </tr>
+                <tr>
+                    <td>University of Illinois Springfield, Springfield, Illinois
+
+
+                    </td>
+                    <td>Illinois</td>
+                </tr>
+                <tr>
+                    <td>Lewis University, Romeoville (Illinois) and Albuquerque (New Mexico) Campus
+
+
+                    </td>
+                    <td>Illinois</td>
+                </tr>
+                <tr>
+                    <td>Governors State University, Chicago, Illinois
+
+
+                    </td>
+                    <td>Illinois</td>
+                </tr>
+                <tr>
+                    <td>Southern Illinois University, Edwardsville, Illinois
+
+
+                    </td>
+                    <td>Illinois</td>
+                </tr>
+                <tr>
+                    <td>Western Illinois University, Macomb, Illinois
+
+
+                    </td>
+                    <td>Illinois</td>
+                </tr>
+                <tr>
+                    <td>University of New Haven, West Haven, Connecticut
+
+
+                    </td>
+                    <td>Connecticut</td>
+                </tr>
+                <tr>
+                    <td>Dakota State University, Madison, South Dakota
+
+
+                    </td>
+                    <td>South Dakota</td>
+                </tr>
+                <tr>
+                    <td>Pittsburg State University, Pittsburg, Kansas
+
+
+                    </td>
+                    <td>Kansas</td>
+                </tr>
+                <tr>
+                    <td>University of Bridgeport, Bridgeport, Connecticut
+
+
+                    </td>
+                    <td>Connecticut</td>
+                </tr>
+                <tr>
+                    <td>Murray State University, Murray, Kentucky
+
+
+                    </td>
+                    <td>Kentucky</td>
+                </tr>
+                <tr>
+                    <td>Marshall University Huntington, West Virginia
+
+
+                    </td>
+                    <td>West Virginia</td>
+                </tr>
+                <tr>
+                    <td>University of Louisville, Louisville, Kentucky
+
+
+                    </td>
+                    <td>Kentucky</td>
+                </tr>
+                <tr>
+                    <td>Yeshiva University, New York City
+
+
+                    </td>
+                    <td>New York</td>
+                </tr>
+                <tr>
+                    <td>Bryant University, Smithfield, Rhode Island (Only PG)
+
+
+                    </td>
+                    <td>Rhode Island</td>
+                </tr>
+                <tr>
+                    <td>Midwestern State University, Wichita Falls, Texas
+
+
+                    </td>
+                    <td>Texas</td>
+                </tr>
+                <tr>
+                    <td>NY Tech, New York (NYIT)
+
+
+                    </td>
+                    <td>New York</td>
+                </tr>
+                <tr>
+                    <td>Bay Atlantic University, Washington D.C
+
+
+                    </td>
+                    <td>Washington DC</td>
+                </tr>
+                <tr>
+                    <td>University of Central Oklahoma, Edmond, Oklahoma
+
+
+                    </td>
+                    <td>Oklahoma</td>
+                </tr>
+                <tr>
+                    <td>Central Michigan university, Mount Pleasant, Michigan
+
+
+                    </td>
+                    <td>Michigan</td>
+                </tr>
+                <tr>
+                    <td>Eastern Michigan University, Ypsilanti, Michigan
+
+
+                    </td>
+                    <td>Michigan</td>
+                </tr>
+                <tr>
+                    <td>Grand Valley State University, Allendale, Michigan
+
+                    </td>
+                    <td>Michigan</td>
+                </tr>
+                <tr>
+                    <td>Lawrence Technological University, Southfield, Michigan
+
+
+                    </td>
+                    <td>Michigan</td>
+                </tr>
+                <tr>
+                    <td>University of Michigan-Flint, Flint, Michigan
+
+
+                    </td>
+                    <td>Michigan</td>
+                </tr>
+                <tr>
+                    <td>Texas A&M University – Kingsville, Kingsville, Texas
+
+
+                    </td>
+                    <td>Texas</td>
+                </tr>
+                <tr>
+                    <td>Felician University, Rutherford, New Jersey
+
+
+                    </td>
+                    <td>New Jersey</td>
+                </tr>
+                <tr>
+                    <td>Saint Leo University, St. Leo, Florida
+
+
+                    </td>
+                    <td>Florida</td>
+                </tr>
+                <tr>
+                    <td>Midway University, Midway, Kentucky
+
+
+                    </td>
+                    <td>Kentucky</td>
+                </tr>
+                <tr>
+                    <td>Johnson and Wales University, Providence, Rhode Island
+
+
+                    </td>
+                    <td>Rhode Island</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td>Indiana University of Pennsylvania, Indiana, PA
+
+                    </td>
+                    <td>Pennsylvania</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function filterTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("universityTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 1; i < tr.length; i++) { // Start from index 1 to skip the header row
+                td = tr[i].getElementsByTagName("td");
+                var found = false;
+
+                for (var j = 0; j < td.length; j++) {
+                    txtValue = td[j].textContent || td[j].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (found) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

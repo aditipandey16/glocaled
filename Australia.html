@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University List</title>
+    <link rel="shortcut icon" type="png" href="assets/images/icon.png">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #98b6ee;
+            color: #333;
+        }
+
+        .table-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: auto;
+            /* Enable horizontal scrolling on small screens */
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            th,
+            td {
+                padding: 8px;
+            }
+        }
+    </style>
+
+    <!-- Include the Poppins font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+</head>
+
+<body>
+
+    <div class="table-container">
+        <h2 style="font-size: 24px; margin-bottom: 20px;">Universities we represent in Australia</h2>
+        <input type="text" id="searchInput" placeholder="Search..." oninput="filterTable()">
+
+        <table id="universityTable">
+            <thead>
+                <tr>
+                    <th>University Name</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>The University of New South Wales, Sydney (CRICOS Code 00098G)                    </td>
+                    <td>Sydney</td>
+                </tr>
+                <tr>
+                    <td>Monash University, Melbourne (CRICOS Code 00008C) (except Punjab and Haryana)
+                    </td>
+                    <td>Melbourne</td>
+                </tr>
+                <tr>
+                    <td>The University of Queensland, Brisbane (CRICOS Code 00025B) 
+                    </td>
+                    <td>Brisbane</td>
+                </tr>
+                <tr>
+                    <td>University of Western Australia, Perth (CRICOS Code: 00126G)
+                    </td>
+                    <td>Perth</td>
+                </tr>
+                <tr>
+                    <td>The University of Adelaide, Adelaide (CRICOS Code 00123M) (except Punjab, Haryana, and Gujarat)
+                    </td>
+                    <td>Adelaide</td>
+                </tr>
+                <tr>
+                    <td>University of Technology Sydney, Sydney (CRICOS Provider No. 00099F)
+                    </td>
+                    <td>Sydney</td>
+                </tr>
+                <tr>
+                    <td>Macquarie University, Sydney (CRICOS Code 00002J) (except Punjab and Haryana)
+                    </td>
+                    <td>Sydney</td>
+                </tr>
+                <tr>
+                    <td>RMIT University, Melbourne (CRICOS Code 00122A) 
+                    </td>
+                    <td>Melbourne</td>
+                </tr>
+                <tr>
+                    <td>University of Wollongong, Wollongong (CRICOS Code 00102E )
+                    </td>
+                    <td>Wollongong</td>
+                </tr>
+                <tr>
+                    <td>The University of Newcastle, Newcastle (CRICOS Code 00109J)  Curtin
+                    </td>
+                    <td>Newcastle</td>
+                </tr>
+                <tr>
+                    <td>Curtin University, Perth (CRICOS Code 00301J) 
+                    </td>
+                    <td>Perth</td>
+                </tr>
+                <tr>
+                    <td>Queensland University of Technology, Brisbane (CRICOS Code 00213J) (except Punjab and Haryana)
+                    </td>
+                    <td>Brisbane</td>
+                </tr>
+                <tr>
+                    <td>Deakin University, Melbourne & Geelong (CRICOS Code 00113B) 
+                    </td>
+                    <td>Melbourne & Geelong</td>
+                </tr>
+                <tr>
+                    <td>La Trobe University, Melbourne & Sydney (CRICOS Codes: Mel-03312D & Syd-00115M) 
+                    </td>
+                    <td>Melbourne & Sydney</td>
+                </tr>
+                <tr>
+                    <td>Griffith University, Gold Coast & Brisbane (CRICOS Code 00233E) 
+                    </td>
+                    <td>Gold Coast & Brisbane</td>
+                </tr>
+                <tr>
+                    <td>Swinburne University of Technology, Melbourne (CRICOS Code 00111D) 
+                    </td>
+                    <td>Melbourne</td>
+                </tr>
+                <tr>
+                    <td>Western Sydney University, Sydney (Paramatta & City campuses) (CRICOS Code 00917K) (except Punjab and Haryana)
+                    </td>
+                    <td>Sydney</td>
+                </tr>
+                <tr>
+                    <td>University of Tasmania, Hobart, Launceston,  Sydney & Melbourne (CRICOS Code 00586B) 
+                    </td>
+                    <td>Launceston, Sydney & Melbourne</td>
+                </tr>
+                <tr>
+                    <td>University of South Australia, Adelaide (CRICOS Code 00121B) (except Haryana)
+                    </td>
+                    <td>Adelaide</td>
+                </tr>
+                <tr>
+                    <td>Flinders University, Adelaide (CRICOS Code 00114A) (except Punjab and Haryana)
+                    </td>
+                    <td>Adelaide</td>
+                </tr>
+                <tr>
+                    <td>University of Southern Queensland, Toowoomba (CRICOS Code: 02225M)
+                    </td>
+                    <td>Toowoomba</td>
+                </tr>
+                <tr>
+                    <td>James Cook University, Townsville, Cairns, & Brisbane (CRICOS Code 00117J) 
+                    </td>
+                    <td>Townsville, Cairns & Brisbane</td>
+                </tr>
+                <tr>
+                    <td>CQUniversity Australia, Sydney, Melbourne, Brisbane & Perth (CRICOS Code 00219C) 
+                    </td>
+                    <td>Sydney, Melbourne, Brisbane & Perth</td>
+                </tr>
+                <tr>
+                    <td>Australian Catholic University, North Sydney, Melbourne, Brisbane, Canberra, Adelaide (CRICOS Code 00004G) 
+                    </td>
+                    <td>North Sydney, Melbourne, Brisbane, Canberra & Adelaide</td>
+                </tr>
+                <tr>
+                    <td>Charles Sturt University, Wagga Wagga (CRICOS Code 00005F) 
+                    </td>
+                    <td>Wagga Wagga</td>
+                </tr>
+                <tr>
+                    <td>Torrens University, Adelaide, Melbourne & Sydney (CRICOS Provider Code: 03389E)
+                    </td>
+                    <td>Adelaide, Melbourne & Sydney</td>
+                </tr>
+                <tr>
+                    <td>Education Centre Australia (CRICOS Code 02644C)
+                    </td>
+                    <td>Australia</td>
+                </tr>
+                <tr>
+                    <td>Kent Institute Australia, Sydney (CRICOS Code - 00161E)
+                    </td>
+                    <td>Sydney</td>
+                </tr>
+                <tr>
+                    <td>Kaplan Business School (CRICOS Code 02426B)
+                    </td>
+                    <td>Brisbane</td>
+                </tr>
+                <tr>
+                    <td>Le Cordon Bleu, Adelaide, Sydney, Melbourne & Perth (CRICOS Code 02380M) 
+                    </td>
+                    <td>Adelaide, Sydney, Melbourne & Perth</td>
+                </tr>
+                <tr>
+                    <td>William Angliss Institute, Melbourne (CRICOS Code: 01505M)
+                    </td>
+                    <td>Melbourne</td>
+                </tr>
+                <tr>
+                    <td>Blue Mountains International Hotel Management School, Adelaide (CRICOS Provider Code: 03389E)
+                    </td>
+                    <td>Adelaide</td>
+                </tr>
+                <tr>
+                    <td>International College of Management Sydney (CRICOS Code 01484M) 
+                    </td>
+                    <td>Sydney</td>
+                </tr>
+                <tr>
+                    <td>Engineering Institute of Technology, Perth (CRICOS No: 03567C) 
+                    </td>
+                    <td>Perth</td>
+                </tr>
+                <tr>
+                    <td>Academy of Information Technology, Sydney (CRICOS Code: 02155J)
+                    </td>
+                    <td>Sydney</td>
+                </tr>
+                <tr>
+                    <td>Excelsia College, Sydney (CRICOS Code 02664K)
+                    </td>
+                    <td>Sydney</td>
+                </tr>
+                <tr>
+                    <td>Ironwood Institute Adelaide, Adelaide (CRICOS Code: 03039E)
+                    </td>
+                    <td>Adelaide</td>
+                </tr>
+                <tr>
+                    <td>The Hotel School, Sydney, Melbourne & Brisbane (CRICOS Code 01241G)
+                    </td>
+                    <td>Sydney, Melbourne & Brisbane</td>
+                </tr>
+                <tr>
+                    <td>Australian College of Applied Psychology, Sydney (CRICOS Code 01328A) 
+                    </td>
+                    <td>Sydney</td>
+                </tr>
+
+                <tr>
+                    <td>UNSW Global, Sydney (CRICOS Code 00098G)
+                    </td>
+                    <td>Sydney</td>
+                </tr>
+                <tr>
+                    <td>The University of Adelaide College (CRICOS Code 00123M) 
+                    </td>
+                    <td>Adelaide</td>
+                </tr>
+                <tr>
+                    <td>UTS College, Sydney (CRICOS Provider Codes: UTS College 00859D, UTS 00099F) 
+                    </td>
+                    <td>Sydney</td>
+                </tr>
+                <tr>
+                    <td>The University of Newcastle College of International Education, Newcastle (CRICOS 00109J)
+                    </td>
+                    <td>Newcastle</td>
+                </tr>
+                <tr>
+                    <td>Curtin College, Perth (CRICOS Code 02042G) 
+                    </td>
+                    <td>Perth</td>
+                </tr>
+                <tr>
+                    <td>Deakin College, Melbourne (CRICOS Code 01590J) 
+                    </td>
+                    <td>Melbourne</td>
+                </tr>
+                <tr>
+                    <td>South Australia Institute of Business & Technology, Adelaide (CRICOS Code 02193C) 
+                    </td>
+                    <td>Adelaide</td>
+                </tr>
+                <tr>
+                    <td>Griffith College, Gold Coast & Brisbane (CRICOS Code 01737F) 
+                    </td>
+                    <td>Gold Coast & Brisbane</td>
+                </tr>
+                <tr>
+                    <td>The University of New South Wales, Sydney (CRICOS Code 00098G)                    </td>
+                    <td>Sydney</td>
+                </tr>
+                <tr>
+                    <td>La Trobe College, Melbourne (CRICOS Code 03312D) 
+                    </td>
+                    <td>Melbourne</td>
+                </tr>
+                <tr>
+                    <td>Sydney Institute of Business & Technology, Sydney (CRICOS code 01576G) 
+                    </td>
+                    <td>Sydney</td>
+                </tr>
+                <tr>
+                    <td>Edith Cowan College (CRICOS Code 01312J) 
+                    </td>
+                    <td>Joondalup</td>
+                </tr>
+                <tr>
+                    <td>Eynesbury College, Adelaide (CRICOS Code 00561M) 
+                    </td>
+                    <td>Adelaide</td>
+                </tr>
+                <tr>
+                    <td>University of Canberra College, Canberra (CRICOS Code 00212K) 
+                    </td>
+                    <td>Canberra</td>
+                </tr>
+                <tr>
+                    <td>TAFE Queensland, Brisbane (CRICOS Code 03020E)
+                    </td>
+                    <td>Brisbane</td>
+                </tr>
+                <tr>
+                    <td>Russo Business School, Brisbane (CRICOS Code – 03441F)
+                    </td>
+                    <td>Brisbane</td>
+                </tr>
+                <tr>
+                    <td>Charles Darwin University International College (CRICOS Codes: 0100739; 0100740)
+                    </td>
+                    <td>Darwin</td>
+                </tr>
+                <tr>
+                    <td>Sarina Russo Institute, Brisbane (CRICOS Code 00607B) 
+                    </td>
+                    <td>Brisbane</td>
+                </tr>
+                <tr>
+                    <td>Analytics Institute of Australia, Melbourne (CRICOS Code 04059D)
+                    </td>
+                    <td>Melbourne</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function filterTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("universityTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 1; i < tr.length; i++) { // Start from index 1 to skip the header row
+                td = tr[i].getElementsByTagName("td");
+                var found = false;
+
+                for (var j = 0; j < td.length; j++) {
+                    txtValue = td[j].textContent || td[j].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (found) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
