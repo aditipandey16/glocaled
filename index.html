@@ -18,6 +18,66 @@
   <link rel="preload" as="image" href="./assets/images/hero-banner.png">
   <link rel="preload" as="image" href="./assets/images/hero-abs-1.png" media="min-width(768px)">
   <link rel="preload" as="image" href="./assets/images/hero-abs-2.png" media="min-width(768px)">
+  <style>
+    #myModal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      animation: scaleIn 1s ease-in-out;
+    }
+
+    .modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fefefe;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @keyframes scaleUp {
+      from {
+        transform: translate(-50%, -50%) scale(0.1);
+      }
+
+      to {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .modal-content {
+        max-width: 90%;
+        /* Adjust max-width for smaller screens */
+      }
+    }
+  </style>
 
 </head>
 
@@ -26,6 +86,14 @@
   <!-- 
     - #HEADER
   -->
+  <div id="myModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img src="assets/images/modal.jpg" alt="pop" style="height: 45rem; width: 45rem;">
+      <h2>Check out our Instagram!</h2>
+      <p>Follow us on Instagram: <a href="https://www.instagram.com/glocaled/" target="_blank">@glocaled</a></p>
+    </div>
+  </div>
 
   <header class="header" data-header>
     <div class="container">
@@ -64,6 +132,9 @@
 
           <li class="navbar-item">
             <a href="#courses" class="navbar-link" data-nav-toggler>Why us?</a>
+          </li>
+          <li class="navbar-item">
+            <a href="#cofounder" class="navbar-link" data-nav-toggler>Co founders</a>
           </li>
 
           <li class="navbar-item">
@@ -208,60 +279,60 @@
           <h2 class="h2 section-title">Explore</h2>
           <div id="courseModal" class="modal">
 
-          
-        <div class="card-container">
-        <a href="UK.html" class="card">
-          <img src="assets/images/ukimg.webp" alt="Country 1">
-          <div class="bottom">
-            <img src="assets/images/uk.png" alt="Flag Country 1">
-            <span>United Kingdom</span>
-          </div>
-        </a>
 
-        <!-- Example card 2 -->
-        <a href="your_link_for_country_2" class="card">
-          <img src="assets/images/ausimg.avif" alt="Country 2">
-          <div class="bottom">
-            <img src="assets/images/australia.png" alt="Flag Country 2">
-            <span>Australia</span>
-          </div>
-        </a>
-        <a href="your_link_for_country_1" class="card">
-          <img src="assets/images/usaimg.webp" alt="Country 1">
-          <div class="bottom">
-            <img src="assets/images/USA.png" alt="Flag Country 1">
-            <span>USA</span>
-          </div>
-        </a>
-        <a href="your_link_for_country_1" class="card">
-          <img src="assets/images/nzimg.jpg" alt="Country 1">
-          <div class="bottom">
-            <img src="assets/images/NewZealand.png" alt="Flag Country 1">
-            <span>NewZealand</span>
-          </div>
-        </a>
-        <a href="your_link_for_country_1" class="card">
-          <img src="assets/images/canadaimg.jpg" alt="Country 1">
-          <div class="bottom">
-            <img src="assets/images/Canada.png" alt="Flag Country 1">
-            <span>Canada</span>
-          </div>
-        </a>
-        <a href="your_link_for_country_1" class="card">
-          <img src="assets/images/europeimg.webp" alt="Country 1">
-          <div class="bottom">
-            <img src="assets/images/Europe.png" alt="Flag Country 1">
-            <span>Europe</span>
-          </div>
-        </a>
-        <a href="your_link_for_country_1" class="card">
-          <img src="assets/images/singaporeimg.jpg" alt="Country 1">
-          <div class="bottom">
-            <img src="assets/images/Singapore.png" alt="Flag Country 1">
-            <span>Singapore</span>
-          </div>
-        </a>
-        </div>
+            <div class="card-container">
+              <a href="UK.html" class="card">
+                <img src="assets/images/ukimg.webp" alt="Country 1">
+                <div class="bottom">
+                  <img src="assets/images/uk.png" alt="Flag Country 1">
+                  <span>United Kingdom</span>
+                </div>
+              </a>
+
+              <!-- Example card 2 -->
+              <a href="your_link_for_country_2" class="card">
+                <img src="assets/images/ausimg.avif" alt="Country 2">
+                <div class="bottom">
+                  <img src="assets/images/australia.png" alt="Flag Country 2">
+                  <span>Australia</span>
+                </div>
+              </a>
+              <a href="your_link_for_country_1" class="card">
+                <img src="assets/images/usaimg.webp" alt="Country 1">
+                <div class="bottom">
+                  <img src="assets/images/USA.png" alt="Flag Country 1">
+                  <span>USA</span>
+                </div>
+              </a>
+              <a href="your_link_for_country_1" class="card">
+                <img src="assets/images/nzimg.jpg" alt="Country 1">
+                <div class="bottom">
+                  <img src="assets/images/NewZealand.png" alt="Flag Country 1">
+                  <span>NewZealand</span>
+                </div>
+              </a>
+              <a href="your_link_for_country_1" class="card">
+                <img src="assets/images/canadaimg.jpg" alt="Country 1">
+                <div class="bottom">
+                  <img src="assets/images/Canada.png" alt="Flag Country 1">
+                  <span>Canada</span>
+                </div>
+              </a>
+              <a href="your_link_for_country_1" class="card">
+                <img src="assets/images/europeimg.webp" alt="Country 1">
+                <div class="bottom">
+                  <img src="assets/images/Europe.png" alt="Flag Country 1">
+                  <span>Europe</span>
+                </div>
+              </a>
+              <a href="your_link_for_country_1" class="card">
+                <img src="assets/images/singaporeimg.jpg" alt="Country 1">
+                <div class="bottom">
+                  <img src="assets/images/Singapore.png" alt="Flag Country 1">
+                  <span>Singapore</span>
+                </div>
+              </a>
+            </div>
       </section>
       <section>
 
@@ -482,6 +553,54 @@
 
         </div>
       </section>
+      <section id="cofounder" class="section event" aria-label="event">
+        <div class="container">
+
+          <p class="section-subtitle">Co Founders</p>
+
+          <h2 class="h2 section-title">Top Management</h2>
+          <div class="main">
+            <div class="c">
+              <div class="card-inner">
+                <div class="front">
+                  <img src="assets/images/cofounder1.jpg" alt="CEO Image">
+                  <h2>Chandan Shaksham Pandey</h2>
+                  <p>Founder & CEO</p>
+                  <a href="#" onclick="showDetails(1)">Read More</a>
+                </div>
+                <div class="back">
+                  <!-- <span class="close-btn" onclick="closeDetails(1)">X</span> -->
+                  <!-- <h2>CEO Details</h2> -->
+                  <p>Meet our CEO, Chandan, a proud graduate from London. Since 2018, he has passionately guided
+                    students towards international success. His visionary leadership propels our overseas consultancy,
+                    empowering individuals to excel globally. Join us in shaping futures under Chandan's seasoned
+                    guidance, where expertise meets personalized mentorship for a transformative educational journey.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="c">
+              <div class="card-inner">
+                <div class="front">
+                  <img src="assets/images/cofounder2.jpg" alt="COO Image">
+                  <h2>Tamojeet Pandit</h2><br><br>
+                  <p>Co-founder & COO</p>
+                  <a href="#" onclick="showDetails(2)">Read More</a>
+                </div>
+                <div class="back">
+                  <!-- <span class="close-btn" onclick="closeDetails(2)">X</span> -->
+                  <!-- <h2>COO Details</h2> -->
+                  <p>Introducing our COO, Tamojeet, a distinguished graduate from London. With a strategic mindset
+                    and international expertise, Tamojeet plays a pivotal role in driving our consultancy's success.
+                    His commitment to operational excellence ensures seamless global opportunities for our clients. Join
+                    us on a journey led by Tamojeet towards transformative educational experiences.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
 
 
@@ -591,6 +710,17 @@
     - ionicon link
   -->
       <script>
+        window.onload = function () {
+          showModal();
+        };
+
+        function showModal() {
+          document.getElementById('myModal').style.display = 'block';
+        }
+
+        function closeModal() {
+          document.getElementById('myModal').style.display = 'none';
+        }
         function myUKFunction() {
           document.getElementById("myUKDropdown").classList.toggle("show");
         }
@@ -716,6 +846,13 @@
           document.querySelector(`#testimonial${currentTestimonial}`).classList.remove('active');
           currentTestimonial = index;
           document.querySelector(`#testimonial${currentTestimonial}`).classList.add('active');
+        }
+        function showDetails(cardNumber) {
+          document.querySelector('.card:nth-child(' + cardNumber + ') .back').style.transform = 'rotateY(0deg)';
+        }
+
+        function closeDetails(cardNumber) {
+          document.querySelector('.card:nth-child(' + cardNumber + ') .back').style.transform = 'rotateY(180deg)';
         }
       </script>
       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
