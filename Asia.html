@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University List</title>
+    <link rel="shortcut icon" type="png" href="assets/images/icon.png">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #98b6ee;
+            color: #333;
+        }
+
+        .table-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: auto;
+            /* Enable horizontal scrolling on small screens */
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            th,
+            td {
+                padding: 8px;
+            }
+        }
+    </style>
+
+    <!-- Include the Poppins font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+</head>
+
+<body>
+
+    <div class="table-container">
+        <h2 style="font-size: 24px; margin-bottom: 20px;">Universities we represent in Asia</h2>
+        <input type="text" id="searchInput" placeholder="Search..." oninput="filterTable()">
+
+        <table id="universityTable">
+            <thead>
+                <tr>
+                    <th>University Name</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>University of Birmingham, Dubai Campus
+
+                    </td>
+                    <td>Dubai
+                    </td>
+                </tr>
+                <tr>
+                    <td>University of Wollongong, Dubai Campus
+
+                    </td>
+                    <td>Dubai</td>
+                </tr>
+                <tr>
+                    <td>Curtin University, Dubai Campus
+
+                    </td>
+                    <td>Dubai</td>
+                </tr>
+                <tr>
+                    <td>Heriot Watt University, Dubai Campus
+
+                    </td>
+                    <td>Dubai</td>
+                </tr>
+                <tr>
+                    <td>University of Stirling, Dubai Campus
+
+                    </td>
+                    <td>Dubai</td>
+                </tr>
+                <tr>
+                    <td>Murdoch University, Dubai Campus
+
+                    </td>
+                    <td>Dubai</td>
+                </tr>
+                <tr>
+                    <td>Canadian University Dubai
+
+                    </td>
+                    <td>Dubai</td>
+                </tr>
+                <tr>
+                    <td>Abu Dhabi University, Abu Dhabi
+
+                    </td>
+                    <td>Dubai</td>
+                </tr>
+                <tr>
+                    <td>Middlesex University, Dubai Campus
+
+                    </td>
+                    <td>Dubai
+                    </td>
+                </tr>
+                <tr>
+                    <td>De Montfort University, Dubai
+
+                    </td>
+                    <td>Dubai</td>
+                </tr>
+                <tr>
+                    <td>Rochester Institute of Technology Dubai (RIT Dubai)
+
+                    </td>
+                    <td>Dubai</td>
+                </tr>
+                <tr>
+                    <td>Hult International Business School, Dubai Campus
+
+                    </td>
+                    <td>Dubai</td>
+                </tr>
+                <tr>
+                    <td>Manipal Academy of Higher Education (MAHE), Dubai Campus
+
+                    </td>
+                    <td>Dubai</td>
+                </tr>
+                <tr>
+                    <td>EM Normandie, Dubai Campus
+
+                    <td>Dubai</td>
+                </tr>
+                <tr>
+                    <td>HTMI Switzerland, Dubai Campus
+
+                    </td>
+                    <td>Dubai</td>
+                </tr>
+                <tr>
+                    <td>American University of Ras Al Khaimah, Dubai
+
+                    </td>
+                    <td>Dubai</td>
+                </tr>
+                <tr>
+                    <td>The Emirates Academy of Hospitality Management, Dubai
+
+                    </td>
+                    <td>Dubai</td>
+                </tr>
+                <tr>
+                    <td>Emirates Aviation University, Dubai
+
+                    </td>
+                    <td>Dubai</td>
+                </tr>
+                <tr>
+                    <td>University of Europe for Applied Sciences, Dubai
+
+                    </td>
+                    <td>Dubai</td>
+                </tr>
+                <tr>
+                    <td>Istituto Marangoni Fashion and Design School, Dubai
+
+                    </td>
+                    <td>Dubai</td>
+                </tr>
+                <tr>
+                    <td>Institute of Management Technology (IMT), Dubai
+
+                    </td>
+                    <td>Dubai</td>
+                </tr>
+                <tr>
+                    <td>Global Business Studies, Dubai
+
+                    </td>
+                    <td>Dubai</td>
+                </tr>
+                <tr>
+                    <td>Monash University, Malaysia Campus
+
+                    </td>
+                    <td>Malaysia</td>
+                </tr>
+                <tr>
+                    <td>University of Southampton, Malaysia Campus
+                    </td>
+                    <td>Malaysia</td>
+                </tr>
+                <tr>
+                    <td>University of Nottingham, Malaysia Campus
+
+                    </td>
+                    <td>Malaysia</td>
+                </tr>
+                <tr>
+                    <td>Curtin University, Malaysia Campus
+
+                    </td>
+                    <td>Malaysia</td>
+                </tr>
+                <tr>
+                    <td>University of Wollongong, Malaysia
+
+                    </td>
+                    <td>Malaysia</td>
+                </tr>
+                <tr>
+                    <td>Heriot-Watt University, Malaysia Campus
+
+                    </td>
+                    <td>Malaysia</td>
+                </tr>
+                <tr>
+                    <td>Taylor`s University, Malaysia
+
+                    </td>
+                    <td>Malaysia</td>
+                </tr>
+                <tr>
+                    <td>Swinburne University, Malaysia Campus
+
+                    </td>
+                    <td>Malaysia</td>
+                </tr>
+                <tr>
+                    <td>UCSI University, Kuala Lumpur
+
+                    </td>
+                    <td>Malaysia</td>
+                </tr>
+                <tr>
+                    <td>Asia Pacific University of Technology And Innovation, Kuala Lumpur
+
+                    </td>
+                    <td>Malaysia
+                    </td>
+                </tr>
+                <tr>
+                    <td>University of Kuala Lumpur, Malaysia
+
+                    </td>
+                    <td>Malaysia
+                    </td>
+                </tr>
+                <tr>
+                    <td>Manipal International University, Malaysia (Only UG programs)
+
+                    </td>
+                    <td>Malaysia</td>
+                </tr>
+                <tr>
+                    <td>Sunway Le Cordon Bleu, Malaysia
+
+                    </td>
+                    <td>Malaysia</td>
+                </tr>
+                <tr>
+                    <td>Middlesex University, Mauritius Campus
+
+
+                    </td>
+                    <td>Mauritius</td>
+                </tr>
+                <tr>
+                    <td>Queen Mary University, Malta
+
+
+
+                    </td>
+                    <td>Malta</td>
+                </tr>
+                <tr>
+                    <td>University of Malta
+
+
+
+                    </td>
+                    <td>Malta</td>
+                </tr>
+                <tr>
+                    <td>The Malta College of Arts, Science and Technology (MCAST)
+
+
+
+                    </td>
+                    <td>Malta</td>
+                </tr>
+                <tr>
+                    <td>IDEA Academy, Malta
+
+
+
+                    </td>
+                    <td>Malta</td>
+                </tr>
+                <tr>
+                    <td>College De Paris, Malta Campus
+
+
+
+                    </td>
+                    <td>Malta</td>
+                </tr>
+                <tr>
+                    <td>London School of Commerce, Malta Campus
+
+
+
+                    </td>
+                    <td>Malta</td>
+                </tr>
+                <tr>
+                    <td>Global Business Studies, Malta Campus
+
+
+
+                    </td>
+                    <td>Malta</td>
+                </tr>
+                <tr>
+                    <td>University of Nottingham Ningbo China
+
+
+                    </td>
+                    <td>China</td>
+                </tr>
+                <tr>
+                    <td>University of Nottingham Ningbo China
+
+
+                    </td>
+                    <td>China</td>
+                </tr>
+                <tr>
+                    <td>Tokyo International University, Shinjuku, Tokyo
+
+
+
+                    </td>
+                    <td>Japan</td>
+                </tr>
+                <tr>
+                    <td>Kudan Institute of Japanese language & Culture, Tokyo
+
+
+                    </td>
+                    <td>Japan</td>
+                </tr>
+                <tr>
+                    <td>RMIT University, Vietnam Campus
+
+
+
+                    </td>
+                    <td>Vietnam</td>
+                </tr>
+                <tr>
+                    <td>George Mason University, Korea Campus
+
+
+
+                    </td>
+                    <td>South Korea</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function filterTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("universityTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 1; i < tr.length; i++) { // Start from index 1 to skip the header row
+                td = tr[i].getElementsByTagName("td");
+                var found = false;
+
+                for (var j = 0; j < td.length; j++) {
+                    txtValue = td[j].textContent || td[j].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (found) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

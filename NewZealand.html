@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University List</title>
+    <link rel="shortcut icon" type="png" href="assets/images/icon.png">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #98b6ee;
+            color: #333;
+        }
+
+        .table-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: auto;
+            /* Enable horizontal scrolling on small screens */
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            th,
+            td {
+                padding: 8px;
+            }
+        }
+    </style>
+
+    <!-- Include the Poppins font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+</head>
+
+<body>
+
+    <div class="table-container">
+        <h2 style="font-size: 24px; margin-bottom: 20px;">Universities we represent in NewZealand</h2>
+        <input type="text" id="searchInput" placeholder="Search..." oninput="filterTable()">
+
+        <table id="universityTable">
+            <thead>
+                <tr>
+                    <th>University Name</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>University of Auckland, Auckland
+                    </td>
+                    <td>Auckland
+                    </td>
+                </tr>
+                <tr>
+                    <td>Massey University, Palmerston North
+                    </td>
+                    <td>Palmerston North</td>
+                </tr>
+                <tr>
+                    <td>Victoria University of Wellington, Wellington
+                    </td>
+                    <td>Wellington</td>
+                </tr>
+                <tr>
+                    <td>University of Waikato, Hamilton, North Island
+                    </td>
+                    <td>Hamilton, North Island</td>
+                </tr>
+                <tr>
+                    <td>University of Canterbury, Christchurch
+                    </td>
+                    <td>Christchurch</td>
+                </tr>
+                <tr>
+                    <td>Lincoln University, Lincoln
+                    </td>
+                    <td>Lincoln</td>
+                </tr>
+                <tr>
+                    <td>Auckland University of Technology, Auckland
+                    </td>
+                    <td>Auckland</td>
+                </tr>
+                <tr>
+                    <td>Unitec Institute of Technology- Te Pūkenga, Auckland
+                    </td>
+                    <td>Auckland</td>
+                </tr>
+                <tr>
+                    <td>Otago Polytechnic- Te Pūkenga, Dunedin & Auckland
+                    </td>
+                    <td>Dunedin & Auckland
+                    </td>
+                </tr>
+                <tr>
+                    <td>Manukau Institute of Technology- Te Pūkenga, Auckland
+                    </td>
+                    <td>Auckland</td>
+                </tr>
+                <tr>
+                    <td>Ara Institute of Canterbury- Te Pūkenga, Christchurch
+                    </td>
+                    <td>Christchurch</td>
+                </tr>
+                <tr>
+                    <td>Eastern Institute of Technology- Te Pūkenga, Napier
+                    </td>
+                    <td>Napier</td>
+                </tr>
+                <tr>
+                    <td>Waikato Institute of Technology (Wintec) - Te Pūkenga, Hamilton
+                    </td>
+                    <td>Hamilton</td>
+                </tr>
+                <tr>
+                    <td>Nelson Marlborough Institute of Technology (NMIT)- Te Pūkenga, Nelson & Blenheim
+                    </td>
+                    <td>Nelson & Blenheim</td>
+                </tr>
+                <tr>
+                    <td>Whitireia New Zealand- Te Pūkeng, Porirua
+                    </td>
+                    <td>Porirua</td>
+                </tr>
+                <tr>
+                    <td>Southern Institute of Technology- Te Pūkenga, Invercargill
+                    </td>
+                    <td>Invercargill</td>
+                </tr>
+                <tr>
+                    <td>Wellington Institute of Technology (WelTec)- Te Pūkenga, Wellington
+                    </td>
+                    <td>Wellington</td>
+                </tr>
+                <tr>
+                    <td>Western Institute of Technology at Taranaki (WITT)- Te Pūkenga, New Plymouth
+                    </td>
+                    <td>N ew Plymouth</td>
+                </tr>
+                <tr>
+                    <td>North Tec- Te Pūkenga, Whangarei
+                    </td>
+                    <td>Whangarei</td>
+                </tr>
+                <tr>
+                    <td>The Universal College of Learning (UCOL)-Te Pūkenga, Palmerston North
+                    </td>
+                    <td>Palmerston North</td>
+                </tr>
+                <tr>
+                    <td>Tai Poutini Polytechnic - Te Pūkenga, Auckland
+                    </td>
+                    <td>Auckland</td>
+                </tr>
+                <tr>
+                    <td>Open Polytechnic of New Zealand- Te Pūkenga, Wellington
+                    </td>
+                    <td>Wellington</td>
+                </tr>
+                <tr>
+                    <td>Toi Ohomai Institute of Technology- Te Pūkenga, Rotorua & Tauranga
+                    </td>
+                    <td>Rotorua & Tauranga</td>
+                </tr>
+                <tr>
+                    <td>University of Bristol, Bristol, England </td>
+                    <td>England</td>
+                </tr>
+                <tr>
+                    <td>New Zealand Skills and Education Group, Auckland
+                    </td>
+                    <td>Auckland</td>
+                </tr>
+                <tr>
+                    <td>Pacific International Hotel Management School, New Plymouth
+                    </td>
+                    <td>New Plymouth</td>
+                </tr>
+                <tr>
+                    <td>UC International College, Christchurch
+                    </td>
+                    <td>Christchurch</td>
+                </tr>
+                <tr>
+                    <td>Taylors College, Auckland 
+                    </td>
+                    <td>Auckland</td>
+                </tr>
+                <tr>
+                    <td>University of Waikato College, Hamilton
+                    </td>
+                    <td>Hamilton</td>
+                </tr>
+                <tr>
+                    <td>Whitecliffe College of Arts and Design, Auckland & Christchurch
+                    </td>
+                    <td>Auckland & Christchurch</td>
+                </tr>
+                <tr>
+                    <td>Whitecliffe College of Fashion and Sustainability, Auckland & Wellington
+                    </td>
+                    <td>Auckland & Wellington</td>
+                </tr>
+                <tr>
+                    <td>Whitecliffe College of Technology & Innovation, Auckland, Wellington & Christchurch
+                    </td>
+                    <td>Auckland, Wellington & Christchurch
+                    </td>
+                </tr>
+                <tr>
+                    <td>Aspire2International Group, Auckland, Wellington, Tauranga & Christchurch
+                    </td>
+                    <td>Auckland, Wellington, Tauranga & Christchurch
+                    </td>
+                </tr>
+                <tr>
+                    <td>Le Cordon Bleu, Wellington
+                    </td>
+                    <td>Wellington</td>
+                </tr>
+                <tr>
+                    <td>New Zealand Airline Academy, Oamaru
+                    </td>
+                    <td>Oamaru</td>
+                </tr>
+                <tr>
+                    <td>ATMC New Zealand, Auckland
+
+                    </td>
+                    <td>Auckland</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function filterTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("universityTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 1; i < tr.length; i++) { // Start from index 1 to skip the header row
+                td = tr[i].getElementsByTagName("td");
+                var found = false;
+
+                for (var j = 0; j < td.length; j++) {
+                    txtValue = td[j].textContent || td[j].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (found) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

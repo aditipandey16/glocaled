@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University List</title>
+    <link rel="shortcut icon" type="png" href="assets/images/icon.png">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #98b6ee;
+            color: #333;
+        }
+
+        .table-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: auto;
+            /* Enable horizontal scrolling on small screens */
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            th,
+            td {
+                padding: 8px;
+            }
+        }
+    </style>
+
+    <!-- Include the Poppins font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+</head>
+
+<body>
+
+    <div class="table-container">
+        <h2 style="font-size: 24px; margin-bottom: 20px;">Universities we represent in Europe</h2>
+        <input type="text" id="searchInput" placeholder="Search..." oninput="filterTable()">
+
+        <table id="universityTable">
+            <thead>
+                <tr>
+                    <th>University Name</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Modul University, Vienna
+
+                    </td>
+                    <td>Austia</td>
+                </tr>
+                <tr>
+                    <td>International Business School, Vienna (Except students from Punjab & South India)
+
+                    </td>
+                    <td>Austria</td>
+                </tr>
+                <tr>
+                    <td>University of Nicosia, Nicosia
+
+                    </td>
+                    <td>Cyprus</td>
+                </tr>
+                <tr>
+                    <td>University of Central Lancashire (UCLAN), Pyla
+
+                    </td>
+                    <td>Cyprus</td>
+                </tr>
+                <tr>
+                    <td>Neapolis University Pafos, Pafos
+
+                    </td>
+                    <td>Cyprus</td>
+                </tr>
+                <tr>
+                    <td>Aarhus University, Aarhus
+
+                    </td>
+                    <td>Denmark</td>
+                </tr>
+                <tr>
+                    <td>International Business Academy, Kolding
+
+                    </td>
+                    <td>Denmark</td>
+                </tr>
+                <tr>
+                    <td>Aalto University, Espoo
+
+                    </td>
+                    <td>Finland</td>
+                </tr>
+                <tr>
+                    <td>University of Turku, Turku
+
+                    </td>
+                    <td>Finland</td>
+                </tr>
+                <tr>
+                    <td>LUT University, Lappeenranta
+
+                    </td>
+                    <td>Finland</td>
+                </tr>
+                <tr>
+                    <td>Tampere University, Tampere
+
+                    </td>
+                    <td>Finland</td>
+                </tr>
+                <tr>
+                    <td>University of Eastern Finland, Kuopio
+
+                    </td>
+                    <td>Finland</td>
+                </tr>
+                <tr>
+                    <td>LAB University of Applied Sciences, Lahti
+
+                    </td>
+                    <td>Finland</td>
+                </tr>
+                <tr>
+                    <td>University of Vaasa, Vaasa
+
+                    </td>
+                    <td>Finland</td>
+                </tr>
+                <tr>
+                    <td>Vaasa University of Applied Sciences VAMK, Vaasa
+
+                    </td>
+                    <td>Finland</td>
+                </tr>
+                <tr>
+                    <td>Metropolia University of Applied Sciences, Helsinki
+
+                    </td>
+                    <td>Finland</td>
+                </tr>
+                <tr>
+                    <td>Satakunta University of Applied Sciences (SAMK), Pori
+
+                    </td>
+                    <td>Finland</td>
+                </tr>
+                <tr>
+                    <td>Haaga-Helia University of Applied Sciences, Porvoo
+
+                    </td>
+                    <td>Finland</td>
+                </tr>
+                <tr>
+                    <td>Constructor University, Bremen
+
+                    </td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>SRH Berlin University of Applied Sciences, Berlin and Hamburg
+
+                    </td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>SRH Hochschule Heidelberg, Heidelberg
+
+                    </td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>SRH Hochschule Nordrhein-Westfalen, Dortmond
+
+                    </td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>SRH Fernhochschule – The Distance Learning University, Riedlingen
+
+
+                    </td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                <tr>
+                    <td>FOM Hochschule - University of Applied Sciences for Economics and Management, Essen
+
+
+                    </td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>Hochschule Bremen - International Graduate Centre, Bremen
+
+
+                    </td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>EBS University, Wiesbaden
+
+
+                    </td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>International School of Management, Dortmund
+
+
+                    </td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>International University of Applied Sciences, Berlin and Bad Honnef
+
+
+                    </td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>CBS International Business School, Cologne
+
+
+                    </td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>Arden University, Berlin
+
+
+                    </td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>GISMA Business School Hochschule, Hanover
+
+
+                    </td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>GISMA University of Applied Sciences GmbH, Berlin
+
+
+                    </td>
+                    <td>Germany</td>
+                </tr>
+
+                <tr>
+                    <td>New European College, Munich
+                
+                    </td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>EU Business School, Munich
+
+                
+                    </td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>Accadis Hochschule Bad Homburg - University of Applied Sciences, Bad Homburg
+
+                
+                    </td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>Berlin School of Business and Innovation, Berlin
+
+                
+                    </td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>University of Europe for Applied Sciences, Hamburg
+
+                
+                    </td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>Hochschule Macromedia University of Applied Sciences, Munich 
+
+                
+                    </td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>Navitas - Lancaster University, Leipzig
+
+                
+                    </td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>EIIE Eurasia Institute for International Education GmbH, Berlin (Except students from Gujarat, Punjab, Haryana)
+
+                
+                    </td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>International Studienkolleg Braunschweig, Braunschweig
+
+                
+                    </td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>University of Debrecen, Debrecen
+
+                
+                    </td>
+                    <td>Hungary</td>
+                </tr>
+                <tr>
+                    <td>University of Pécs, Pécs
+
+                
+                    </td>
+                    <td>Hungary</td>
+                </tr>
+                <tr>
+                    <td>Szechenyi Istvan University (University of Gyor), Gyor
+
+                
+                    </td>
+                    <td>Hungary</td>
+                </tr>
+                <tr>
+                    <td>International Business School (IBS), Budapest (Except students from Punjab & South India)
+
+                
+                    </td>
+                    <td>Hungary</td>
+                </tr>
+                <tr>
+                    <td>Budapest Metropolitan University of Applied Science, Budapest
+
+                    </td>
+                    <td>Hungary</td>
+                </tr>
+                <tr>
+                    <td>University of Padua, Padua
+
+                    </td>
+                    <td>Italy</td>
+                </tr>
+                <tr>
+                    <td>Istituto Europeo di Design - IED, Milan
+
+                    </td>
+                    <td>Italy</td>
+                </tr>
+                <tr>
+                    <td>Istituto Marangoni Fashion and Design School, (Milan and Florence Campus)
+
+                    </td>
+                    <td>Italy</td>
+                </tr>
+                <tr>
+                    <td>Nuova Accademia di Belle Arti (NABA School), Milan
+
+                    </td>
+                    <td>Italy</td>
+                </tr>
+                <tr>
+                    <td>Domus Academy, Milan
+
+                    </td>
+                    <td>Italy</td>
+                </tr>
+                <tr>
+                    <td>Scuola Politecnica di Design - SPD, Milan
+
+                    </td>
+                    <td>Italy</td>
+                </tr>
+                <tr>
+                    <td>Raffles Milano- Instituto Moda e Design, Milan
+
+                    </td>
+                    <td>Italy</td>
+                </tr>
+                <tr>
+                    <td>LUISS Guido Carli, Rome
+
+                    </td>
+                    <td>Italy</td>
+                </tr>
+                <tr>
+                    <td>Vilnius University, Vilnius 
+
+                    </td>
+                    <td>Lithuania</td>
+                </tr>
+                <tr>
+                    <td>Kazimieras Simonavicius University, Vilnius
+
+                    </td>
+                    <td>Lithuania</td>
+                </tr>
+                <tr>
+                    <td>University of Twente, Enschede (UG Pathway and Direct Entry - UG & PG)
+
+                    </td>
+                    <td>Netherlands</td>
+                </tr>
+                <tr>
+                    <td>Radboud University, Nijmegen
+
+                    </td>
+                    <td>Netherlands</td>
+                </tr>
+                <tr>
+                    <td>Maastricht School of Management, Maastricht
+
+                    </td>
+                    <td>Netherlands</td>
+                </tr>
+                <tr>
+                    <td>Wittenborg University of Applied Sciences, Amsterdam and Apeldoorn Campus
+
+                    </td>
+                    <td>Netherlands</td>
+                </tr>
+                <tr>
+                    <td>Tio Business School, Utrecht
+
+                    </td>
+                    <td>Netherlands</td>
+                </tr>
+                <tr>
+                    <td>Global School for Entrepreneurship, Amsterdam
+
+                    </td>
+                    <td>Netherlands</td>
+                </tr>
+                <tr>
+                    <td>The Hague University of Applied Sciences (UG Pathway), Hague
+
+                    </td>
+                    <td>Netherlands</td>
+                </tr>
+                <tr>
+                    <td>Coventry University, Wroclaw (Poland Campus)
+
+                    </td>
+                    <td>Poland</td>
+                </tr>
+                <tr>
+                    <td>EU Business School, Barcelona
+
+                    </td>
+                    <td>Spain</td>
+                </tr>
+                <tr>
+                    <td>Geneva Business School, Barcelona
+
+                    </td>
+                    <td>Spain</td>
+                </tr>
+                <tr>
+                    <td>UCAM International, Murcia
+
+                    </td>
+                    <td>Spain</td>
+                </tr>
+                <tr>
+                    <td>Instituto Europeo di Design - IED, Madrid and Barcelona
+
+                    </td>
+                    <td>Spain</td>
+                </tr>
+                <tr>
+                    <td>Euroace, Valencia
+
+                    </td>
+                    <td>Spain</td>
+                </tr>
+                <tr>
+                    <td>Swiss Business School, Barcelona Campus
+
+                    </td>
+                    <td>Spain</td>
+                </tr>
+                <tr>
+                    <td>University of the Fraser Valley, Abbotsford, British Columbia
+                    </td>
+                    <td>British Columbia</td>
+                </tr>
+                <tr>
+                    <td>Uppsala University, Uppsala
+
+                    </td>
+                    <td>Sweden
+                    </td>
+                </tr>
+                <tr>
+                    <td>Linnaeus University, Kalmar and Växjö
+
+                    </td>
+                    <td>Sweden</td>
+                </tr>
+                <tr>
+                    <td>University of Skövde, Skövde 
+
+                    </td>
+                    <td>Sweden</td>
+                </tr>
+                <tr>
+                    <td>Halmstad University, Halmstad
+
+                    </td>
+                    <td>Sweden</td>
+                </tr>
+                <tr>
+                    <td>Jönköping University, Jönköping
+
+                    </td>
+                    <td>Sweden</td>
+                </tr>
+                <tr>
+                    <td>Dalarna University, Falun
+
+                    </td>
+                    <td>Sweden</td>
+                </tr>
+                <tr>
+                    <td>Kristianstad University, Kristianstad
+
+                    </td>
+                    <td>Sweden</td>
+                </tr>
+                <tr>
+                    <td>ON Campus at Lund University
+
+                    </td>
+                    <td>Sweden</td>
+                </tr>
+                <tr>
+                    <td>ON Campus in Swedish University of Agricultural Sciences
+
+                    </td>
+                    <td>Sweden</td>
+                </tr>
+                <tr>
+                    <td>SKEMA Business School, Paris
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>Ecole Nationale Supérieure des Mines d'Alès - IMT Mines Alès (IMT Mines Alès)
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>NEOMA Business School, Rouen
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>Burgundy School of Business, Dijon
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>Rennes School of Business, Rennes
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>Excelia Group, La Rochelle
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>ESSCA School of Management, Angers
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>Institut supérieur d`électronique de Paris (ISEP), Paris
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>EPITA - School of Engineering and Computer Science, Paris
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>ESIGELEC, Rouen
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>Institut supérieur du commerce de Paris - ISC, Paris
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>EM Normandie Business School, Paris
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>Le Cordon Bleu, Paris
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>De Vinci Higher Education, Paris
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>College de Paris, Paris
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>Queen Mary University of London, Paris
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>Instituto Marangoni Fashion and Design School, Paris
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>The American Business School of Paris, Paris
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>Ecole Ducasse, Paris
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>Berlin School of Business and Innovation, Paris
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>Airways Aviation Academy, Montpellier
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>IDRAC Business School, Paris 
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>ICN Business School, Nancy 
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>(On Campus) Kedge Business School, Talence
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>ICD Business School, Paris
+
+                    </td>
+                    <td>France</td>
+                </tr>
+                <tr>
+                    <td>Synergy University, Moscow
+
+                    </td>
+                    <td>Russia</td>
+                </tr>
+                <tr>
+                    <td>University of Antwerp, Antwerp
+
+                    </td>
+                    <td>Belgium</td>
+                </tr>
+                <tr>
+                    <td>Thomas More, University of Applied Science, Antwerp
+
+                    </td>
+                    <td>Belgium</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function filterTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("universityTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 1; i < tr.length; i++) { // Start from index 1 to skip the header row
+                td = tr[i].getElementsByTagName("td");
+                var found = false;
+
+                for (var j = 0; j < td.length; j++) {
+                    txtValue = td[j].textContent || td[j].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (found) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
