@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-GLhlTQ8iN17PdL7vHA+8V+XpzTCtxFAWj8aFdmMz9L+nc/rSd6Z2a4e2IqKMI1z" crossorigin="anonymous">
+
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- 
@@ -18,6 +20,7 @@
   <link rel="preload" as="image" href="./assets/images/hero-banner.png">
   <link rel="preload" as="image" href="./assets/images/hero-abs-1.png" media="min-width(768px)">
   <link rel="preload" as="image" href="./assets/images/hero-abs-2.png" media="min-width(768px)">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
     #myModal {
       display: none;
@@ -40,7 +43,6 @@
       padding: 20px;
       border-radius: 10px;
       text-align: center;
-
     }
 
     .close {
@@ -49,6 +51,11 @@
       font-size: 28px;
       font-weight: bold;
       cursor: pointer;
+    }
+
+    .instagram-link {
+      color: blue !important;
+      /* Change the color to blue */
     }
 
     @keyframes scaleUp {
@@ -71,11 +78,47 @@
       }
     }
 
+    .modal-content img {
+      width: 45rem;
+      height: 45rem;
+      /* Make the image take 100% of the modal width */
+      /* Maintain the aspect ratio */
+    }
+
     @media (max-width: 600px) {
       .modal-content {
         max-width: 90%;
-        /* Adjust max-width for smaller screens */
       }
+
+      .modal-content img {
+        width: 300px
+          /* Make the image take 100% of the modal width */
+          /* Maintain the aspect ratio */
+      }
+    }
+
+    .header .container .company {
+      color: rgb(5, 145, 98);
+    }
+
+    #contactPopup .popup-content .details {
+      color: blue;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .contact-icons {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .contact-icons li {
+      margin: 0 15px;
     }
   </style>
 
@@ -89,9 +132,10 @@
   <div id="myModal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
-      <img src="assets/images/modal.jpg" alt="pop" style="height: 45rem; width: 45rem;">
+      <img src="assets/images/modal.jpg" alt="pop">
       <h2>Check out our Instagram!</h2>
-      <p>Follow us on Instagram: <a href="https://www.instagram.com/glocaled/" target="_blank">@glocaled</a></p>
+      <p>Follow us on Instagram: <a href="https://www.instagram.com/glocaled/" target="_blank"
+          class="instagram-link">@glocaled</a></p>
     </div>
   </div>
 
@@ -99,12 +143,13 @@
     <div class="container">
 
       <h1>
-        <a href="#" class="logo">GlocalEd</a>
+        <a href="#" class="logo company">GlocalEd</a>
       </h1>
 
       <nav class="navbar" data-navbar>
 
         <div class="navbar-top">
+          <img src="assets/images/asia.png" alt="">
           <a href="#" class="logo">GlocalEd</a>
 
           <button class="nav-close-btn" aria-label="Close menu" data-nav-toggler>
@@ -163,15 +208,15 @@
           <ul>
             <li>
               <ion-icon name="call-outline" class="contact-icon"></ion-icon>
-              Phone: <a href="tel:+918867760146">+91 8867760146</a>
+              Phone: <a href="tel:+918867760146" class="details">+91 8867760146</a>
             </li>
             <li>
               <ion-icon name="mail-outline" class="contact-icon"></ion-icon>
-              Email: <a href="mailto:glocaled2327@gmail.com">glocaled2327@gmail.com</a>
+              Email: <a href="mailto:glocaled2327@gmail.com" class="details">glocaled2327@gmail.com</a>
             </li>
             <li>
               <ion-icon name="logo-instagram" class="contact-icon"></ion-icon>
-              Instagram: <a href="https://www.instagram.com/glocaled" target="_blank">@glocaled</a>
+              Instagram: <a href="https://www.instagram.com/glocaled" target="_blank" class="details">@glocaled</a>
             </li>
           </ul>
         </div>
@@ -288,6 +333,13 @@
                   <span>United Kingdom</span>
                 </div>
               </a>
+              <a href="Ireland.html" class="card">
+                <img src="assets/images/ireimg.jpeg" alt="Country 1">
+                <div class="bottom">
+                  <img src="assets/images/ireland.png" alt="Flag Country 1">
+                  <span>Ireland</span>
+                </div>
+              </a>
 
               <!-- Example card 2 -->
               <a href="Australia.html" class="card">
@@ -330,6 +382,13 @@
                 <div class="bottom">
                   <img src="assets/images/Singapore.png" alt="Flag Country 1">
                   <span>Singapore</span>
+                </div>
+              </a>
+              <a href="Asia.html" class="card">
+                <img src="assets/images/asiaimg.jpeg" alt="Country 1">
+                <div class="bottom">
+                  <img src="assets/images/asia.png" alt="Flag Country 1">
+                  <span>Asia</span>
                 </div>
               </a>
             </div>
@@ -477,7 +536,7 @@
               <div class="course-card">
 
                 <figure class="card-banner">
-                  <img src="./assets/images/course-1.jpg" width="370" height="270" loading="lazy"
+                  <img src="./assets/images/course-1.avif" width="370" height="270" loading="lazy"
                     alt="Competitive Strategy law for all students" class="img-cover">
                 </figure>
 
@@ -492,10 +551,11 @@
                 <div class="card-content">
 
                   <h3 class="h3">
-                    <p class="card-title">GlocalEd Partners with Aurinko Academy: Revolutionizing Education
-                      Together. Joining forces to break down barriers and provide transformative learning experiences
-                      worldwide. Expanding our reach and enhancing offerings with Aurinko Academy's innovative approach.
-                      Stay tuned for exciting programs and initiatives as we shape the future of education together.</p>
+                    <p class="card-title">Embark on a global academic journey with GlocalEd's Student
+                      Flight Grant Program, unlocking extraordinary opportunities with up to &#8377;50,000 off on flight
+                      tickets. Our exclusive airline partnerships make international education more accessible than
+                      ever. Apply now for flexible, cost-effective, and enriching travel opportunities tailored for
+                      students pursuing knowledge across borders.</p>
                   </h3>
 
                 </div>
@@ -517,7 +577,7 @@
                     <p href="#" class="card-title">Elevate your institution's legacy with our Alumni Engagement Service.
                       We orchestrate impactful alumni meets, providing students with insights, mentorship, and
                       networking opportunities. Choose an experience that goes beyond the ordinary,
-                      fostering lasting connections and inspiring the professional journeys of your students.</p>
+                      fostering lasting connections and inspiring the professional journeys of your students. <br><br></p>
                   </h3>
 
                 </div>
@@ -539,7 +599,7 @@
                     <p href="#" class="card-title">Unlock financial possibilities with our loan services, backed by
                       strategic partnerships with multiple banks. We streamline the process, providing competitive rates
                       and personalized solutions tailored to your needs. Trust us to navigate your financial journey
-                      efficiently and securely. <br><br><br></p>
+                      efficiently and securely. <br><br><br><br></p>
                   </h3>
 
                 </div>
@@ -574,7 +634,8 @@
                   <p>Meet our CEO, Chandan, a proud graduate from London. Since 2018, he has passionately guided
                     students towards international success. His visionary leadership propels our overseas consultancy,
                     empowering individuals to excel globally. Join us in shaping futures under Chandan's seasoned
-                    guidance, where expertise meets personalized mentorship for a transformative educational journey.</p>
+                    guidance, where expertise meets personalized mentorship for a transformative educational journey.
+                  </p>
                 </div>
               </div>
             </div>
@@ -600,108 +661,112 @@
             </div>
           </div>
           <div class="std">
-          <p class="section-subtitle">Testimonials</p>
+            <p id="testimonial" class="section-subtitle">Testimonials</p>
 
-          <h2 class="h2 section-title">Join Our Community</h2>
-          <div class="test">
-            <div class="c">
-              <div class="card-inner">
-                <div class="front">
-                  <img src="assets/images/t1.jpg" alt="CEO Image">
-                  <h2>- Zohra Huma Naafiah</h2>
-                  <p>Coventry University</p>
-                  <a href="#" onclick="showDetails(1)">Read More</a>
-                </div>
-                <div class="back">
-                  <!-- <span class="close-btn" onclick="closeDetails(1)">X</span> -->
-                  <!-- <h2>CEO Details</h2> -->
-                  <p>"Exceptional service! The team guided me seamlessly through the entire application process. Their
-                    expertise, professionalism, and personalized attention made my journey towards studying abroad
-                    smooth
-                    and stress-free. Highly recommend!"</p>
+            <h2 class="h2 section-title">Join Our Community</h2>
+            <div class="test">
+              <div class="c">
+                <div class="card-inner">
+                  <div class="front">
+                    <img src="assets/images/t1.jpg" alt="CEO Image">
+                    <h2>- Zohra Huma Naafiah</h2>
+                    <p>Coventry University</p>
+                    <a href="#" onclick="showDetails(1)">Read More</a>
+                  </div>
+                  <div class="back">
+                    <!-- <span class="close-btn" onclick="closeDetails(1)">X</span> -->
+                    <!-- <h2>CEO Details</h2> -->
+                    <p>"Exceptional service! The team guided me seamlessly through the entire application process. Their
+                      expertise, professionalism, and personalized attention made my journey towards studying abroad
+                      smooth
+                      and stress-free. Highly recommend!"</p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Card 2 -->
-            <div class="c" onclick="flipCard(this)">
-              <div class="card-inner" id="card">
-                <div class="front">
-                  <img src="assets/images/t2.jpg" alt="COO Image">
-                  <h2>Aringa J Lully</h2><br><br>
-                  <p>Co-founder & COO</p>
-                  <button onclick="readMore()">Read More</button>
-                </div>
-                <div class="back">
-                  <!-- <button onclick="closeCard()">Close</button> -->
-                  <p>"I am grateful for the invaluable support I received from the consultancy. They not only helped me
-                    choose the right university and course but also assisted with the visa application process. The
-                    team's
-                    commitment to excellence truly sets them apart."</p>
-                </div>
-              </div>
-            </div>
-            <div class="c">
-              <div class="card-inner">
-                <div class="front">
-                  <img src="assets/images/t3.jpg" alt="CEO Image">
-                  <h2>- Sailukumar Kasireddy</h2>
-                  <p>Coventry University</p>
-                  <a href="#" onclick="showDetails(1)">Read More</a>
-                </div>
-                <div class="back">
-                  <!-- <span class="close-btn" onclick="closeDetails(1)">X</span> -->
-                  <!-- <h2>CEO Details</h2> -->
-                  <p>"Five stars for the consultancy! From comprehensive advice on selecting the ideal destination to
-                    assistance with documentation and interviews, they were instrumental in making my dream of studying
-                    abroad a reality. A dedicated and reliable team that genuinely cares about your success"</p>
+              <!-- Card 2 -->
+              <div class="c" onclick="flipCard(this)">
+                <div class="card-inner" id="card">
+                  <div class="front">
+                    <img src="assets/images/t2.jpg" alt="COO Image">
+                    <h2>Aringa J Lully</h2><br><br>
+                    <p>Ulster University</p>
+                    <button onclick="readMore()">Read More</button>
+                  </div>
+                  <div class="back">
+                    <!-- <button onclick="closeCard()">Close</button> -->
+                    <p>"I am grateful for the invaluable support I received from the consultancy. They not only helped
+                      me
+                      choose the right university and course but also assisted with the visa application process. The
+                      team's
+                      commitment to excellence truly sets them apart."</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="c">
-              <div class="card-inner">
-                <div class="front">
-                  <img src="assets/images/t4.jpg" alt="CEO Image">
-                  <h2>- Syed Haider</h2>
-                  <p>Coventry University</p>
-                  <a href="#" onclick="showDetails(1)">Read More</a>
-                </div>
-                <div class="back">
-                  <!-- <span class="close-btn" onclick="closeDetails(1)">X</span> -->
-                  <!-- <h2>CEO Details</h2> -->
-                  <p>""Outstanding service! The consultants were knowledgeable, approachable, and always ready to
-                    address
-                    my concerns. Their expertise in navigating the complexities of international admissions and visas
-                    gave
-                    me the confidence to pursue my education abroad. Thank you for the exceptional guidance!""</p>
-                </div>
-              </div>
-            </div>
-            <div class="c">
-              <div class="card-inner">
-                <div class="front">
-                  <img src="assets/images/t5.jpg" alt="CEO Image">
-                  <h2>- Uddesh Mulik</h2>
-                  <p>Coventry University</p>
-                  <a href="#" onclick="showDetails(1)">Read More</a>
-                </div>
-                <div class="back">
-                  <!-- <span class="close-btn" onclick="closeDetails(1)">X</span> -->
-                  <!-- <h2>CEO Details</h2> -->
-                  <p>"I had an excellent experience with the overseas consultancy. The team's proactive approach, timely
-                    responses, and thorough assistance in every aspect of the application process exceeded my
-                    expectations. Grateful for their unwavering support on my journey to studying overseas."</p>
+              <div class="c">
+                <div class="card-inner">
+                  <div class="front">
+                    <img src="assets/images/t3.jpg" alt="CEO Image">
+                    <h2>- Sailukumar Kasireddy</h2>
+                    <p>Northumbria University</p>
+                    <a href="#" onclick="showDetails(1)">Read More</a>
+                  </div>
+                  <div class="back">
+                    <!-- <span class="close-btn" onclick="closeDetails(1)">X</span> -->
+                    <!-- <h2>CEO Details</h2> -->
+                    <p>"Five stars for the consultancy! From comprehensive advice on selecting the ideal destination to
+                      assistance with documentation and interviews, they were instrumental in making my dream of
+                      studying
+                      abroad a reality. A dedicated and reliable team that genuinely cares about your success"</p>
+                  </div>
                 </div>
               </div>
+              <div class="c">
+                <div class="card-inner">
+                  <div class="front">
+                    <img src="assets/images/t4.jpg" alt="CEO Image">
+                    <h2>- Syed Haider</h2>
+                    <p>Queen Mary University of London</p>
+                    <a href="#" onclick="showDetails(1)">Read More</a>
+                  </div>
+                  <div class="back">
+                    <!-- <span class="close-btn" onclick="closeDetails(1)">X</span> -->
+                    <!-- <h2>CEO Details</h2> -->
+                    <p>""Outstanding service! The consultants were knowledgeable, approachable, and always ready to
+                      address
+                      my concerns. Their expertise in navigating the complexities of international admissions and visas
+                      gave
+                      me the confidence to pursue my education abroad. Thank you for the exceptional guidance!""</p>
+                  </div>
+                </div>
+              </div>
+              <div class="c">
+                <div class="card-inner">
+                  <div class="front">
+                    <img src="assets/images/t5.jpg" alt="CEO Image">
+                    <h2>- Uddesh Mulik</h2>
+                    <p>Coventry University</p>
+                    <a href="#" onclick="showDetails(1)">Read More</a>
+                  </div>
+                  <div class="back">
+                    <!-- <span class="close-btn" onclick="closeDetails(1)">X</span> -->
+                    <!-- <h2>CEO Details</h2> -->
+                    <p>"I had an excellent experience with the overseas consultancy. The team's proactive approach,
+                      timely
+                      responses, and thorough assistance in every aspect of the application process exceeded my
+                      expectations. Grateful for their unwavering support on my journey to studying overseas."</p>
+                  </div>
+                </div>
+              </div>
+              
             </div>
-          </div>
           </div>
         </div>
       </section>
 
 
 
-      
+
 
 
 
@@ -709,17 +774,24 @@
 
       <footer>
 
-      <div class="footer-bottom">
-        <p class="copyright">
-          <br>
-          <br>
+        <div class="footer-bottom">
+          <p class="section-subtitle">Contact us</p>
+        <ul class="contact-icons">
+          <li><a href="https://www.instagram.com/your_instagram_username" target="_blank"><i
+                class="fab fa-instagram"></i></a></li>
+          <li><a href="mailto:your@email.com"><i class="far fa-envelope"></i></a></li>
+          <li><a href="tel:+1234567890"><i class="fas fa-phone"></i></a></li>
+        </ul>
+          <p class="copyright">
+            <br>
+            <br>
 
-          Copyright &#169 2023 GlocalEd. All Rights Reserved by <a href="#" class="copyright-link">GlocalEd</a> |
-          Privacy Policy
-        </p>
-      </div>
+            Copyright &#169 2023 GlocalEd. All Rights Reserved by <a href="#" class="copyright-link">GlocalEd</a> |
+            Privacy Policy
+          </p>
+        </div>
 
-      </div>
+        </div>
       </footer>
 
 

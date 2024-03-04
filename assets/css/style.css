@@ -1126,7 +1126,7 @@ font-family: 'Open Sans', sans-serif;
 
 
 @media (max-width: 600px){
-  .footer-bottom{
+  footer{
     display: none;
   }
 }
