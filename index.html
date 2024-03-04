@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-GLhlTQ8iN17PdL7vHA+8V+XpzTCtxFAWj8aFdmMz9L+nc/rSd6Z2a4e2IqKMI1z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha384-GLhlTQ8iN17PdL7vHA+8V+XpzTCtxFAWj8aFdmMz9L+nc/rSd6Z2a4e2IqKMI1z" crossorigin="anonymous">
 
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -104,12 +105,14 @@
     #contactPopup .popup-content .details {
       color: blue;
     }
+
     footer {
       background-color: #333;
       color: #fff;
       padding: 20px;
       text-align: center;
     }
+
     .contact-icons {
       list-style: none;
       padding: 0;
@@ -117,6 +120,7 @@
       justify-content: center;
       margin-top: 10px;
     }
+
     .contact-icons li {
       margin: 0 15px;
     }
@@ -495,19 +499,19 @@
         <div class="smbox">
           <span>
             <center>
-              <div class="data">700+</div>
+              <div class="data" id="happyClients">0</div>
               <div class="det">Happy Clients</div>
             </center>
           </span>
           <span>
             <center>
-              <div class="data">28</div>
+              <div class="data" id="partnerCountries">28</div>
               <div class="det">Partner Countries</div>
             </center>
           </span>
           <span>
             <center>
-              <div class="data">1000+</div>
+              <div class="data" id="partnerUniversities">0</div>
               <div class="det">Partner Universities</div>
             </center>
           </span>
@@ -577,7 +581,8 @@
                     <p href="#" class="card-title">Elevate your institution's legacy with our Alumni Engagement Service.
                       We orchestrate impactful alumni meets, providing students with insights, mentorship, and
                       networking opportunities. Choose an experience that goes beyond the ordinary,
-                      fostering lasting connections and inspiring the professional journeys of your students. <br><br></p>
+                      fostering lasting connections and inspiring the professional journeys of your students. <br><br>
+                    </p>
                   </h3>
 
                 </div>
@@ -758,7 +763,25 @@
                   </div>
                 </div>
               </div>
-              
+              <div class="c">
+                <div class="card-inner">
+                  <div class="front">
+                    <img src="assets/images/t6.jpg" alt="CEO Image">
+                    <h2>- Deepak Varun Kumar</h2>
+                    <p>University of Strathclyde</p>
+                    <a href="#" onclick="showDetails(1)">Read More</a>
+                  </div>
+                  <div class="back">
+                    <!-- <span class="close-btn" onclick="closeDetails(1)">X</span> -->
+                    <!-- <h2>CEO Details</h2> -->
+                    <p>"I had a fantastic experience with this overseas consultancy. Their proactive approach, timely
+                      responses, and thorough assistance throughout the application process exceeded my expectations.
+                      I'm grateful for their unwavering support on my journey to studying overseas, making the entire
+                      process smooth and successful."</p>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -776,12 +799,11 @@
 
         <div class="footer-bottom">
           <p class="section-subtitle">Contact us</p>
-        <ul class="contact-icons">
-          <li><a href="https://www.instagram.com/glocaled" target="_blank"><i
-                class="fab fa-instagram"></i></a></li>
-          <li><a href="glocaled2327@gmail.com"><i class="far fa-envelope"></i></a></li>
-          <li><a href="tel:+91 8867760146"><i class="fas fa-phone"></i></a></li>
-        </ul>
+          <ul class="contact-icons">
+            <li><a href="https://www.instagram.com/glocaled" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="glocaled2327@gmail.com"><i class="far fa-envelope"></i></a></li>
+            <li><a href="tel:+91 8867760146"><i class="fas fa-phone"></i></a></li>
+          </ul>
           <p class="copyright">
             <br>
             <br>
@@ -820,6 +842,47 @@
     - ionicon link
   -->
       <script>
+        function countUp(elementId, targetNumber) {
+          let count = 0;
+          const element = document.getElementById(elementId);
+
+          function updateCount() {
+            if (count <= targetNumber) {
+              element.textContent = count++;
+              requestAnimationFrame(updateCount);
+            } else {
+              element.textContent = targetNumber + '+';
+            }
+          }
+
+          updateCount();
+        }
+
+        // Detect when the section comes into view
+        function isElementInViewport(el) {
+          const rect = el.getBoundingClientRect();
+          return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+          );
+        }
+
+        // Check if the section is in view and trigger the counting animation
+        function checkVisibility() {
+          const achievementsSection = document.querySelector('.extra');
+          if (isElementInViewport(achievementsSection)) {
+            countUp('happyClients', 700);
+            countUp('partnerUniversities', 800);
+            window.removeEventListener('scroll', checkVisibility);
+          }
+        }
+
+        // Listen for scroll events and check visibility
+        window.addEventListener('scroll', checkVisibility);
+        // Check visibility initially
+        checkVisibility();
         window.onload = function () {
           showModal();
         };
