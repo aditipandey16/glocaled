@@ -100,6 +100,7 @@
 
     .header .container .company {
       color: rgb(5, 145, 98);
+      font-size: 1rem;
     }
 
     #contactPopup .popup-content .details {
@@ -124,6 +125,27 @@
     .contact-icons li {
       margin: 0 15px;
     }
+    .header .container .logo img{
+      height: 5rem;
+      width: 5rem;
+    }
+    .iconmn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000; /* Specify the color you want for the text */
+}
+
+.logo img {
+  margin-right: 10px; /* Adjust the margin as needed */
+}
   </style>
 
 </head>
@@ -147,13 +169,14 @@
     <div class="container">
 
       <h1>
-        <a href="#" class="logo company">GlocalEd</a>
+        <div class="iconmn">
+        <a href="#" class="logo company"><img src="assets/images/icon.png" alt="">GlocalEd</a>
+      </div>
       </h1>
 
       <nav class="navbar" data-navbar>
 
         <div class="navbar-top">
-          <img src="assets/images/asia.png" alt="">
           <a href="#" class="logo">GlocalEd</a>
 
           <button class="nav-close-btn" aria-label="Close menu" data-nav-toggler>
@@ -246,7 +269,7 @@
         - #HERO
       -->
 
-      <section class="hero" id="home" aria-label="hero" style="background-image: url('./assets/images/hero-bg.jpg')">
+      <section class="hero sec" id="home" aria-label="hero" style="background-image: url('./assets/images/hero-bg.jpg')">
         <div class="container">
 
           <div class="hero-content">
@@ -279,7 +302,7 @@
         </div>
       </section>
 
-      <section id="demo" class="section cta" aria-label="workshop"
+      <section id="demo" class="sec section cta" aria-label="workshop"
         style="background-image: url('./assets/images/cta-bg.png')">
         <div class="container">
 
@@ -320,7 +343,7 @@
         - #CATEGORY
       -->
 
-      <section class="section category" id="countries" aria-label="category">
+      <section class="section sec category" id="countries" aria-label="category">
         <div class="container">
 
           <p class="section-subtitle">Countries</p>
@@ -631,9 +654,9 @@
                   <img src="assets/images/cofounder1.jpg" alt="CEO Image">
                   <h2>Chandan Shaksham Pandey</h2>
                   <p>Founder & CEO</p>
-                  <a href="#" onclick="showDetails(1)">Read More</a>
+                  <a href="#csp" onclick="showDetails(1)">Read More</a>
                 </div>
-                <div class="back">
+                <div id="csp" class="back">
                   <!-- <span class="close-btn" onclick="closeDetails(1)">X</span> -->
                   <!-- <h2>CEO Details</h2> -->
                   <p>Meet our CEO, Chandan, a proud graduate from London. Since 2018, he has passionately guided
@@ -652,9 +675,9 @@
                   <img src="assets/images/cofounder2.jpg" alt="COO Image">
                   <h2>Tamojeet Pandit</h2><br><br>
                   <p>Co-founder & COO</p>
-                  <a href="#" onclick="showDetails(2)">Read More</a>
+                  <a href="#tp" onclick="showDetails(2)">Read More</a>
                 </div>
-                <div class="back">
+                <div id="tp" class="back">
                   <!-- <span class="close-btn" onclick="closeDetails(2)">X</span> -->
                   <!-- <h2>COO Details</h2> -->
                   <p>Introducing our COO, Tamojeet, a distinguished graduate from London. With a strategic mindset
@@ -676,9 +699,9 @@
                     <img src="assets/images/t1.jpg" alt="CEO Image">
                     <h2>- Zohra Huma Naafiah</h2>
                     <p>Coventry University</p>
-                    <a href="#" onclick="showDetails(1)">Read More</a>
+                    <a href="#zhm" onclick="showDetails(1)">Read More</a>
                   </div>
-                  <div class="back">
+                  <div id="zhn" class="back">
                     <!-- <span class="close-btn" onclick="closeDetails(1)">X</span> -->
                     <!-- <h2>CEO Details</h2> -->
                     <p>"Exceptional service! The team guided me seamlessly through the entire application process. Their
@@ -696,9 +719,9 @@
                     <img src="assets/images/t2.jpg" alt="COO Image">
                     <h2>Aringa J Lully</h2><br><br>
                     <p>Ulster University</p>
-                    <button onclick="readMore()">Read More</button>
+                    <a href="#ajl" onclick="showDetails(1)">Read More</a>
                   </div>
-                  <div class="back">
+                  <div id="ajl" class="back">
                     <!-- <button onclick="closeCard()">Close</button> -->
                     <p>"I am grateful for the invaluable support I received from the consultancy. They not only helped
                       me
@@ -714,9 +737,9 @@
                     <img src="assets/images/t3.jpg" alt="CEO Image">
                     <h2>- Sailukumar Kasireddy</h2>
                     <p>Northumbria University</p>
-                    <a href="#" onclick="showDetails(1)">Read More</a>
+                    <a href="#sk" onclick="showDetails(1)">Read More</a>
                   </div>
-                  <div class="back">
+                  <div id="sk" class="back">
                     <!-- <span class="close-btn" onclick="closeDetails(1)">X</span> -->
                     <!-- <h2>CEO Details</h2> -->
                     <p>"Five stars for the consultancy! From comprehensive advice on selecting the ideal destination to
@@ -732,9 +755,9 @@
                     <img src="assets/images/t4.jpg" alt="CEO Image">
                     <h2>- Syed Haider</h2>
                     <p>Queen Mary University of London</p>
-                    <a href="#" onclick="showDetails(1)">Read More</a>
+                    <a href="#sh" onclick="showDetails(1)">Read More</a>
                   </div>
-                  <div class="back">
+                  <div id="sh" class="back">
                     <!-- <span class="close-btn" onclick="closeDetails(1)">X</span> -->
                     <!-- <h2>CEO Details</h2> -->
                     <p>""Outstanding service! The consultants were knowledgeable, approachable, and always ready to
@@ -751,9 +774,9 @@
                     <img src="assets/images/t5.jpg" alt="CEO Image">
                     <h2>- Uddesh Mulik</h2>
                     <p>Coventry University</p>
-                    <a href="#" onclick="showDetails(1)">Read More</a>
+                    <a href="#um" onclick="showDetails(1)">Read More</a>
                   </div>
-                  <div class="back">
+                  <div id="um" class="back">
                     <!-- <span class="close-btn" onclick="closeDetails(1)">X</span> -->
                     <!-- <h2>CEO Details</h2> -->
                     <p>"I had an excellent experience with the overseas consultancy. The team's proactive approach,
@@ -769,9 +792,9 @@
                     <img src="assets/images/t6.jpg" alt="CEO Image">
                     <h2>- Deepak Varun Kumar</h2>
                     <p>University of Strathclyde</p>
-                    <a href="#" onclick="showDetails(1)">Read More</a>
+                    <a href="#dvk" onclick="showDetails(1)">Read More</a>
                   </div>
-                  <div class="back">
+                  <div id="dvk" class="back">
                     <!-- <span class="close-btn" onclick="closeDetails(1)">X</span> -->
                     <!-- <h2>CEO Details</h2> -->
                     <p>"I had a fantastic experience with this overseas consultancy. Their proactive approach, timely
@@ -865,24 +888,37 @@
             rect.top >= 0 &&
             rect.left >= 0 &&
             rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth) &&
+            rect.bottom > 0
           );
         }
 
         // Check if the section is in view and trigger the counting animation
-        function checkVisibility() {
-          const achievementsSection = document.querySelector('.extra');
-          if (isElementInViewport(achievementsSection)) {
-            countUp('happyClients', 700);
-            countUp('partnerUniversities', 800);
-            window.removeEventListener('scroll', checkVisibility);
-          }
-        }
+        // function checkVisibility() {
+        //   const achievementsSection = document.querySelector('.extra');
+        //   if (isElementInViewport(achievementsSection)) {
+        //     countUp('happyClients', 700);
+        //     countUp('partnerUniversities', 800);
+        //     window.removeEventListener('scroll', checkVisibility);
+        //   }
+        // }
 
-        // Listen for scroll events and check visibility
-        window.addEventListener('scroll', checkVisibility);
-        // Check visibility initially
-        checkVisibility();
+        // // Listen for scroll events and check visibility
+        // window.addEventListener('scroll', checkVisibility);
+        // // Check visibility initially
+        // checkVisibility();
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              countUp('happyClients', 700);
+              countUp('partnerUniversities', 800);
+              observer.disconnect();
+            }
+          });
+        });
+
+        observer.observe(document.querySelector('.extra'));
+
         window.onload = function () {
           showModal();
         };
