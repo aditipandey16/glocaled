@@ -989,7 +989,9 @@ font-family: 'Open Sans', sans-serif;
   }
 }
 @media (max-width: 600px) {
-  
+  .std{
+    height: 3300px;
+  }
   .test {
     height: 500px;
     flex-direction: column;
@@ -1138,8 +1140,13 @@ font-family: 'Open Sans', sans-serif;
 
 
 @media (max-width: 600px){
-  footer{
-    display: none;
+  #footer {
+    position: relative; /* Set to relative to ensure normal flow */
+    clear: both; /* Clear any floats */
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding: 0;
+    /* Add other styles as needed to make the footer stick to the bottom */
   }
 }
 
@@ -1748,6 +1755,9 @@ font-family: 'Open Sans', sans-serif;
 }
 @media (max-width: 768px) {
   /* Apply styles for screens with a maximum width of 768px (typical tablet and mobile) */
+  .extra p{
+    font-size: 30px;
+  }
   .smbox span {
     flex-basis: auto;
     height: 10rem; /* Allow items to take full width in a column */
