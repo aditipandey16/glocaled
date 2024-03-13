@@ -24,12 +24,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
     @media (max-width: 768px) {
-  body section {
-    margin-bottom: 0 !important; /* Set margin-bottom to 0 to remove the gap between sections */
-    padding-top: 15rem !important;
-    padding-bottom: 5rem !important;
-  }
-}
+      body section {
+        margin-bottom: 0 !important;
+        /* Set margin-bottom to 0 to remove the gap between sections */
+        padding-top: 15rem !important;
+        padding-bottom: 5rem !important;
+      }
+    }
+
     #myModal {
       display: none;
       position: fixed;
@@ -101,8 +103,8 @@
       .modal-content img {
         width: 300px;
         height: 300px;
-          /* Make the image take 100% of the modal width */
-          /* Maintain the aspect ratio */
+        /* Make the image take 100% of the modal width */
+        /* Maintain the aspect ratio */
       }
     }
 
@@ -133,31 +135,45 @@
     .contact-icons li {
       margin: 0 15px;
     }
-    .header .container .logo img{
+
+    .header .container .logo img {
       height: 5rem;
       width: 5rem;
     }
+
     .iconmn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-.logo {
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: #000; /* Specify the color you want for the text */
-}
+    .logo {
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #000;
+      /* Specify the color you want for the text */
+    }
 
-.logo img {
-  margin-right: 10px; /* Adjust the margin as needed */
-}
-.grid-list li h1{
-  color: #000;
-  font-size:2.3rem;
-}
+    .logo img {
+      margin-right: 10px;
+      /* Adjust the margin as needed */
+    }
+
+    .grid-list li h1 {
+      color: #000;
+      font-size: 2.3rem;
+    }
+    .whatsapp-icon {
+            position: fixed;
+            bottom: 75px; /* Adjust the bottom distance as needed */
+            right: 30px; /* Adjust the right distance as needed */
+            z-index: 1000;
+            cursor: pointer;
+            width: 50px; /* Adjust the width as needed */
+            height: 50px;
+    }
   </style>
 
 </head>
@@ -182,8 +198,8 @@
 
       <h1>
         <div class="iconmn">
-        <a href="#" class="logo company"><img src="assets/images/icon.png" alt="">GlocalEd</a>
-      </div>
+          <a href="#" class="logo company"><img src="assets/images/icon.png" alt="">GlocalEd</a>
+        </div>
       </h1>
 
       <nav class="navbar" data-navbar>
@@ -281,7 +297,8 @@
         - #HERO
       -->
 
-      <section class="hero sec" id="home" aria-label="hero" style="background-image: url('./assets/images/hero-bg.jpg')">
+      <section class="hero sec" id="home" aria-label="hero"
+        style="background-image: url('./assets/images/hero-bg.jpg')">
         <div class="container">
 
           <div class="hero-content">
@@ -574,7 +591,7 @@
             <li>
               <h1>50,000 OFF ON FLIGHT TICKETS !!!</h1>
               <div class="course-card">
-                
+
 
                 <figure class="card-banner">
                   <img src="./assets/images/course-1.avif" width="370" height="270" loading="lazy"
@@ -833,28 +850,32 @@
 
 
 
-    <section id="footer">
-      <footer>
+      <section id="footer">
+        <footer>
 
-        <div class="footer-bottom">
-          <p class="section-subtitle">Contact us</p>
-          <ul class="contact-icons">
-            <li><a href="https://www.instagram.com/glocaled" target="_blank"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="mailto:glocaled2327@gmail.com"><i class="far fa-envelope"></i></a></li>
-            <li><a href="tel:+91 8867760146"><i class="fas fa-phone"></i></a></li>
-          </ul>
-          <p class="copyright">
-            <br>
-            <br>
+          <div class="footer-bottom">
+            <p class="section-subtitle">Contact us</p>
+            <ul class="contact-icons">
+              <li><a href="https://www.instagram.com/glocaled" target="_blank"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="mailto:glocaled2327@gmail.com"><i class="far fa-envelope"></i></a></li>
+              <li><a href="tel:+91 8867760146"><i class="fas fa-phone"></i></a></li>
+            </ul>
+            <p class="copyright">
+              <br>
+              <br>
 
-            Copyright &#169 2023 GlocalEd. All Rights Reserved by <a href="#" class="copyright-link">GlocalEd</a> |
-            Privacy Policy
-          </p>
-        </div>
+              Copyright &#169 2023 GlocalEd. All Rights Reserved by <a href="#" class="copyright-link">GlocalEd</a> |
+              Privacy Policy
+            </p>
+          </div>
 
-        </div>
-      </footer>
-    </section>
+          </div>
+        </footer>
+      </section>
+      <a href="https://wa.me/8867760146" target="_blank" rel="noopener noreferrer" class="whatsapp-icon">
+        <img src="assets/images/whatsapp.png" alt="WhatsApp Icon" width="50" height="50">
+        <!-- Alternatively, you can use text: "Chat on WhatsApp" -->
+      </a>
 
 
 
