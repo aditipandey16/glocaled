@@ -27,8 +27,8 @@
       body section {
         margin-bottom: 0 !important;
         /* Set margin-bottom to 0 to remove the gap between sections */
-        padding-top: 15rem !important;
-        padding-bottom: 5rem !important;
+        padding-top: 7rem !important;
+        padding-bottom: 10rem !important;
       }
     }
 
@@ -165,14 +165,82 @@
       color: #000;
       font-size: 2.3rem;
     }
+
     .whatsapp-icon {
-            position: fixed;
-            bottom: 75px; /* Adjust the bottom distance as needed */
-            right: 30px; /* Adjust the right distance as needed */
-            z-index: 1000;
-            cursor: pointer;
-            width: 50px; /* Adjust the width as needed */
-            height: 50px;
+      position: fixed;
+      bottom: 75px;
+      /* Adjust the bottom distance as needed */
+      right: 30px;
+      /* Adjust the right distance as needed */
+      z-index: 1000;
+      cursor: pointer;
+      width: 50px;
+      /* Adjust the width as needed */
+      height: 50px;
+    }
+
+    .certification-section {
+      background-color: #f9f9f9;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .certification-content {
+      margin: 20px;
+      display: flex;
+      flex-direction: row;
+      /* Display children elements horizontally */
+      justify-content: center;
+      /* Center horizontally */
+      align-items: center;
+      /* Center vertically */
+    }
+
+    .certification-image {
+      max-width: 50px;
+      /* Adjust the size of the image */
+      height: 20px;
+      margin: 40px;
+      /* Add some spacing between image and text */
+    }
+
+    .certification-content img {
+      max-width: 500px;
+      /* Adjust the size of the image */
+      height: auto;
+    }
+
+    .certification-text {
+      text-align: left;
+      /* Align text to the left */
+    }
+
+    .certification-content h2 {
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .certification-content p {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 0;
+    }
+
+    /* Media query for screens with a maximum width of 767 pixels (mobile devices) */
+    @media only screen and (max-width: 767px) {
+      .certification-content {
+        flex-direction: column;
+        /* Display children elements vertically */
+        align-items: center;
+        /* Center both horizontally */
+      }
+
+      .certification-content img {
+        margin-right: 0;
+        width: 300px !important;
+        /* Remove margin to center image */
+      }
     }
   </style>
 
@@ -330,6 +398,23 @@
 
         </div>
       </section>
+      <section class="certification-section">
+        <p class="section-subtitle">CCCIS Certification</p>
+        <h2 class="h2 section-title">Proud to be certified</h2>
+        <div class="certification-content">
+          <img src="assets/images/certificate.jpg" alt="CCCIS Certification">
+          <p>Join us in celebrating our achievement of the prestigious CCCIS certification. This certification
+            represents our commitment to excellence and quality in delivering services to our clients. It's a testament
+            to our dedication to staying current with industry standards and best practices, ensuring that we provide
+            the highest level of service and expertise.
+            Obtaining the CCCIS certification required rigorous training, thorough examination, and demonstrated
+            expertise in various areas of information technology and cybersecurity. With this certification, we have
+            proven our ability to safeguard sensitive information, mitigate risks, and implement effective security
+            measures to protect our clients' data and infrastructure.</p>
+
+        </div>
+      </section>
+
 
       <section id="demo" class="sec section cta" aria-label="workshop"
         style="background-image: url('./assets/images/cta-bg.png')">
@@ -453,27 +538,13 @@
 
       </section>
 
-
-
-
-
-      <!-- 
-        - #ABOUT
-      -->
-
-      <section class="section about" id="about" aria-label="about">
+      <section class="section course" aria-label="about">
         <div class="container">
 
           <figure class="about-banner">
 
             <img src="./assets/images/about-banner.jpg" width="200" height="300" loading="lazy" alt="about banner"
               class="w-100 about-img">
-
-            <!-- <img src="./assets/images/about-abs-1.jpg" width="188" height="242" loading="lazy" aria-hidden="true"
-              class="abs-img abs-img-1">
-
-            <img src="./assets/images/about-abs-2.jpg" width="150" height="200" loading="lazy" aria-hidden="true"
-              class="abs-img abs-img-2"> -->
 
           </figure>
 
