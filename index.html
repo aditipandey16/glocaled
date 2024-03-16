@@ -649,26 +649,27 @@
       <div class="extra">
         <p>Our Achievement: Tracking Success in Numbers</p>
         <div class="smbox">
-          <span>
-            <center>
-              <div class="data" id="happyClients">0</div>
-              <div class="det">Happy Clients</div>
-            </center>
-          </span>
-          <span>
-            <center>
-              <div class="data" id="partnerCountries">28</div>
-              <div class="det">Partner Countries</div>
-            </center>
-          </span>
-          <span>
-            <center>
-              <div class="data" id="partnerUniversities">0</div>
-              <div class="det">Partner Universities</div>
-            </center>
-          </span>
+            <span>
+                <center>
+                    <div class="data stat-count" id="happyClients" data-target="700">0</div>
+                    <div class="det">Happy Clients</div>
+                </center>
+            </span>
+            <span>
+                <center>
+                    <div class="data" id="partnerCountries">28</div>
+                    <div class="det">Partner Countries</div>
+                </center>
+            </span>
+            <span>
+                <center>
+                    <div class="data stat-count" id="partnerUniversities" data-target="800">0</div>
+                    <div class="det">Partner Universities</div>
+                </center>
+            </span>
         </div>
-      </div>
+    </div>
+    
 
 
 
@@ -1003,59 +1004,87 @@
     - ionicon link
   -->
       <script>
-        function countUp(elementId, targetNumber) {
-          let count = 0;
-          const element = document.getElementById(elementId);
+        // function countUp(elementId, targetNumber) {
+        //   let count = 0;
+        //   const element = document.getElementById(elementId);
 
-          function updateCount() {
-            if (count <= targetNumber) {
-              element.textContent = count++;
-              requestAnimationFrame(updateCount);
-            } else {
-              element.textContent = targetNumber + '+';
-            }
-          }
-
-          updateCount();
-        }
-
-        // Detect when the section comes into view
-        function isElementInViewport(el) {
-          const rect = el.getBoundingClientRect();
-          return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth) &&
-            rect.bottom > 0
-          );
-        }
-
-        // Check if the section is in view and trigger the counting animation
-        // function checkVisibility() {
-        //   const achievementsSection = document.querySelector('.extra');
-        //   if (isElementInViewport(achievementsSection)) {
-        //     countUp('happyClients', 700);
-        //     countUp('partnerUniversities', 800);
-        //     window.removeEventListener('scroll', checkVisibility);
+        //   function updateCount() {
+        //     if (count <= targetNumber) {
+        //       element.textContent = count++;
+        //       requestAnimationFrame(updateCount);
+        //     } else {
+        //       element.textContent = targetNumber + '+';
+        //     }
         //   }
+
+        //   updateCount();
         // }
 
-        // // Listen for scroll events and check visibility
-        // window.addEventListener('scroll', checkVisibility);
-        // // Check visibility initially
-        // checkVisibility();
-        const observer = new IntersectionObserver((entries, observer) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              countUp('happyClients', 700);
-              countUp('partnerUniversities', 800);
-              observer.disconnect();
-            }
-          });
-        });
+        // // Detect when the section comes into view
+        // function isElementInViewport(el) {
+        //   const rect = el.getBoundingClientRect();
+        //   return (
+        //     rect.top >= 0 &&
+        //     rect.left >= 0 &&
+        //     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        //     rect.right <= (window.innerWidth || document.documentElement.clientWidth) &&
+        //     rect.bottom > 0
+        //   );
+        // }
 
-        observer.observe(document.querySelector('.extra'));
+        
+        // const observer = new IntersectionObserver((entries, observer) => {
+        //   entries.forEach((entry) => {
+        //     if (entry.isIntersecting) {
+        //       countUp('happyClients', 700);
+        //       countUp('partnerUniversities', 800);
+        //       observer.disconnect();
+        //     }
+        //   });
+        // });
+
+        // observer.observe(document.querySelector('.extra'));
+        document.addEventListener('DOMContentLoaded', function() {
+	    const options = {
+	        root: null,
+	        rootMargin: '0px',
+	        threshold: 0.5 // Adjust the threshold as needed
+	    };
+
+	    const observer = new IntersectionObserver(handleIntersection, options);
+
+	    const elementsToAnimate = document.querySelectorAll('.stat-count');
+
+	    elementsToAnimate.forEach(element => {
+	        observer.observe(element);
+	    });
+
+	    function handleIntersection(entries) {
+	        entries.forEach(entry => {
+	            if (entry.isIntersecting) {
+	                const targetValue = parseInt(entry.target.dataset.target, 10) || 0;
+	                animateCounter(entry.target, targetValue);
+	                observer.unobserve(entry.target);
+	            }
+	        });
+	    }
+
+	    function animateCounter(element, targetValue) {
+	        let currentValue = 0;
+
+	        function updateCounter() {
+	            if (currentValue < targetValue) {
+	                currentValue += Math.ceil(targetValue / 100); // Adjust the increment based on your preference
+	                element.innerText = currentValue;
+	                requestAnimationFrame(updateCounter);
+	            } else {
+	                element.innerText = targetValue + '+';
+	            }
+	        }
+
+	        updateCounter();
+	    }
+	});
 
         window.onload = function () {
           showModal();

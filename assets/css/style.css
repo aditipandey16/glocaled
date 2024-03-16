@@ -617,9 +617,9 @@ font-family: 'Open Sans', sans-serif;
 .smbox .data {
 	font-size: 80px;
 	color: #2b089d;	
-  animation: countUp 0.0001s ease-out;
+  /* animation: countUp 0.0001s ease-out; */
 }
-@keyframes countUp {
+/* @keyframes countUp {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -628,7 +628,7 @@ font-family: 'Open Sans', sans-serif;
     opacity: 1;
     transform: translateY(0);
   }
-}
+} */
 
 .smbox .det {
 	font-size: 20px;
